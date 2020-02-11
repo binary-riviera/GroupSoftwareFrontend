@@ -41,3 +41,10 @@ button{
   background: #C0C0C0;
 
 }
+
+ul{height:90px;}
+ul{overflow:hidden; overflow-y:scroll;}
+
+main > .container {
+  padding: 60px 15px 0;
+}
