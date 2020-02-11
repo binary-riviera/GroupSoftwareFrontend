@@ -8,7 +8,7 @@
     <!-- Fonts -->
 
 
-    <link rel="stylesheet" type="text/css" href="gamekeeperLogin.css">
+    <link rel="stylesheet" type="text/css" href="orientation.css">
 
 
     <!-- Bootstrap CSS -->
@@ -18,73 +18,68 @@
 </head>
 <body>
 
-<button onclick="window.location.href='introPage.html'">Back</button>
+<button onclick="window.location.href='introPage.html'" id = "gamekeeperLogin" class="btn btn-sm btn-danger" type="submit">Exit Game</button>
 
 
 
 
-<main class="login-form">
-    <div class="cotainer flex-container">
-        <div class="row justify-content-center">
-            <div class="col">
-              <h1 id="pgHeader"> Student Login </h1>
-                <div class="cards">
-                    <div class="card-body">
+<main class="game mx-auto">
+      <div class="row">
+        <div class= "container">
+          <div class="col-md-12 offset-md-4">
+              <h4>*waiting for players*</h4>
 
-                        <form action="" method="">
-                          <div class="form-group row">
-                              <h2 for="password" class="col-md-8 col-form-label offset-md-3">User Name</h2>
-                          </div>
-                            <div class="form-group row">
-                                <div class="col-md-8 offset-md-3">
-                                    <input type="text" id="email_address" class="form-control" name="email-address" required >
-                                </div>
-                            </div>
+          </div>
 
-                            <div class="form-group row">
-                                <h2 for="password" class="col-md-8 col-form-label offset-md-3">Password</h2>
-                            </div>
+          <div class="col-md-12 offset-md-4">
+              <h4>3/5 waypoints reached</h4>
+          </div>
+      </div>
 
-                            <div class="form-group row">
-                                <div class="col-md-8 offset-md-3">
-                                    <input type="password" id="password" class="form-control" name="password" required>
-                                </div>
-                            </div>
+    </div>
 
-                            <div class="form-group row">
-                                <div class="col-md-6 offset-md-4">
-                                    <div class="checkbox">
-
-                                            <input type="checkbox" name="remember"> Remember Me
-
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                              <div class="col-md-8 offset-md-4">
-                              <button type="submit" class="btn btn-secondary">
-                                  Login
-                              </button>
-                            </div>
-                            </div>
-
-                            <div class="form-group row">
-                              <div class="col-md-8 offset-md-4">
-                              <button type="submit" class="btn btn-secondary">
-                                  Create Account
-                              </button>
-                            </div>
-                            </div>
-
-
-                          </div>
-                    </form>
-                </div>
-            </div>
+    <div class="row clue w-25 justify-content-center offset-md-4">
+        <div class="col-md-12 ">
+            <h4>*Clue 4 *</h4>
         </div>
+        <div class="col-md-12 ">
+            <h4>When new students arrive at University for the first time everything is new and it can be challenging
+for students to find their way around.
+          </h4>
+        </div>
+    </div>
+
+    <div class="row camera">
+      <div class="col-md-12 offset-md-5">
+      <button onclick="window.location.href='introPage.html'" id = "gamekeeperLogin" class="btn btn-sm btn-primary" type="submit">Open Camera</button>
       </div>
     </div>
+
+
+    <div class = "btn-group offset-md-3">
+          <div class="col-lg-12 ">
+          <button onclick="window.location.href='introPage.html'" id = "studentLogin" class="btn btn-lg btn-secondary btn-block" type="submit">I need Help</button>
+          </div>
+          <div class="col-lg-12 ">
+          <button onclick="window.location.href='faq.html'" id = "studentLogin" class="btn btn-lg btn-secondary btn-block" type="submit">FAQ</button>
+          </div>
+    </div>
+
+
+  <div class="h-25 row w-75 offset-md-1 list-group ">
+    <h5 class="card-title">Feed</h5>
+    <ul class="list-group h-25">
+      <li class="list-group-item list-group-item-success">"Neptunes" have reached the Forum</li>
+      <li class="list-group-item list-group-item-danger">"E Street Band" have disconnected!</li>
+      <li class="list-group-item list-group-item-success">"Pharcyde" have reached Harrison</li>
+      <li class="list-group-item list-group-item-warning">"Losers" have left the game</li>
+      <li class="list-group-item list-group-item-warning">"Spooners" have left the game</li>
+      <li class="list-group-item list-group-item-warning">"Losers 2" have left the game</li>
+      <li class="list-group-item list-group-item-warning">"Losers 3" have left the game</li>
+    </ul>
+  </div>
+
+
 
 </main>
 

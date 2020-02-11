@@ -34,3 +34,10 @@ button{
   justify-content: center;
   align-items: center;
 }
+
+.clue{
+  border-style:solid;
+  border-radius: 25px;
+  background: #C0C0C0;
+
+}
