@@ -1,0 +1,22 @@
+{
+  "name": "groupsoftwarefrontend",
+  "version": "1.0.0",
+  "description": "hello",
+  "main": "firebaseconfig.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/binary-riviera/GroupSoftwareFrontend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/binary-riviera/GroupSoftwareFrontend/issues"
+  },
+  "homepage": "https://github.com/binary-riviera/GroupSoftwareFrontend#readme",
+  "dependencies": {
+    "firebase": "^7.8.2"
+  }
+}
