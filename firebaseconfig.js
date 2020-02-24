@@ -1,5 +1,4 @@
-var firebase = require("firebase");
-var chat = require("./updateChat");
+
 
 const firebaseConfig = {
     apiKey: "AIzaSyA38bRGCRCA5d58dRpjbg56iDEwXmvoT8s",
@@ -15,7 +14,8 @@ firebase.initializeApp(firebaseConfig);
 
 var database = firebase.database();
 
-var starCountRef = firebase.database().ref('chat');
-starCountRef.on('child_added', function(snapshot) {
+var starCountRef = firebase.database().ref('playerCount');
+starCountRef.on('value', function(snapshot) {
   console.log(snapshot.val());
+  document.getElementById('nep').innerText = snapshot.val();
 });
