@@ -8,6 +8,9 @@
   <title>Document</title>
 </head>
 <body>
+  <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-auth.js"></script>
 
   <div class="map-container">
   <div class="imagebox">
@@ -62,7 +65,8 @@
         <li class="list-group-item list-group-item-warning">"Losers 2" have left the game</li>
         <li class="list-group-item list-group-item-warning">"Losers 3" have left the game</li>
       </ul>
-      <a href="#" class="btn btn-warning" style="margin-top: 20px;">End game</a>
+      <button id = "exitGame" class="btn btn-sm btn-danger">Exit Game</button>
+      <script src = "logOut.js"></script>
     </div>
   </div>
   </div>
