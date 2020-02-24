@@ -58,9 +58,19 @@ signUp.addEventListener('click', e => {
     var pass  = passwordTxt.value.toString();
     console.log(pass);
 
-    registerUser(email,pass);
-
     //verification for exeter email
+    var substring = "exeter.ac.uk"
+    if(email.includes(substring)){
+        registerUser(email,pass);
+    }
+    else{
+        //add frontend
+        console.log("must be exeter email address")
+    }
+
+    
+
+    
     
     
 
