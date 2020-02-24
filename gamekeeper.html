@@ -9,24 +9,66 @@
 </head>
 <body>
 
-  <div class="map-container">
-  <div class="imagebox">
+
+    <div id="map"></div>
     <script>
-        var map;
-        function initMap() {
-          map = new google.maps.Map(document.getElementById('map-container'), {
-            center: {lat: -34.397, lng: 150.644},
-            zoom: 8
+      var map;
+      function initMap() {
+        // Map settings
+        var options = { center: {lat:50.736683, lng:-3.535371},zoom: 16 }
+        // Create map
+        map = new google.maps.Map(document.getElementById('map'),options);
+        //Icons
+        /*
+        var marker = new google.maps.Marker({
+          position:{lat:50.735418, lng:-3.533251},
+          map :map,
+          icon:{path: google.maps.SymbolPath.CIRCLE,scale: 5},
+        });
+        // Team name
+
+        var infoWindow = new google.maps.InfoWindow({
+          content:'<h1>TEAM F </h1>'
+        });
+
+        marker.addListener('click',function(){infoWindow.open(map,marker);});
+        */
+
+        // ADD new Marker
+        function addMarker(props){
+          var marker = new google.maps.Marker({
+            position:props.coords,
+            map :map,
+            icon:{path: google.maps.SymbolPath.CIRCLE,scale: 5},
           });
+          if(props.content){
+            // Team name
+            var infoWindow = new google.maps.InfoWindow({
+              content:props.content
+            });
+            // Click
+            marker.addListener('click',function(){infoWindow.open(map,marker);});
+          }
         }
-      </script>
-      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcqj31i0b_DPaiexmS4nkp2nQhqM1tovk&callback=initMap"
-      async defer></script>
+        // Adding a marker
+
+        // Array of markers
+        var markers = [
+          {coords:{lat:50.735418, lng:-3.533251},content:'<h1>TEAM F</h1>'},
+          {coords:{lat:50.735418, lng:-3.563251},content:'<h1>TEAM A</h1>'},
+          {coords:{lat:50.735418, lng:-3.503251},content:'<h1>TEAM B</h1>'}
+        ];
+        //Loop
+        for(var i=0;i < markers.length;i++){
+          addMarker(markers[i]);
+        }
 
 
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAo3HuZoSpqpn-dZKP82crvGdJZhebIz6Q&callback=initMap"
+    async defer></script>
 
-  </map>
-  </div>
 
 
   <div class="card float-right" style="width: 25rem;">
