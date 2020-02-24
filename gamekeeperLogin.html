@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Fonts -->
-
+<!-- Fonts -->
 
     <link rel="stylesheet" type="text/css" href="gamekeeperLogin.css">
 
@@ -19,6 +19,9 @@
 <body>
 <button onclick="window.location.href='introPage.html'">Back</button>
 
+<script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-auth.js"></script>
 
 
 
@@ -30,7 +33,6 @@
                 <div class="cards">
                     <div class="card-body">
 
-                        <form action="" method="">
 
                           <div class="form-group row">
                               <h2 for="password" class="col-md-8 col-form-label offset-md-3">User Name</h2>
@@ -38,7 +40,7 @@
 
                             <div class="form-group row">
                                 <div class="col-md-8 offset-md-3">
-                                    <input type="text" id="email_address" class="form-control" name="email-address" required >
+                                    <input type="email" id="email_address" class="form-control" name="email-address" required >
                                 </div>
                             </div>
 
@@ -63,13 +65,14 @@
                             </div>
 
                             <div class="col-md-6 offset-md-4">
-                                <button onclick="window.location.href='gamekeeper.html'" type="submit" class="btn btn-secondary">
-                                    Login
+                                <button class="btn btn-action" id = "login">
+                                    Log in
                                 </button>
 
                             </div>
+
                           </div>
-                    </form>
+            
                 </div>
             </div>
         </div>
@@ -77,7 +80,7 @@
     </div>
 
 </main>
-
+<script src="AuthenticationKeeper.js"></script>
 
 
 
