@@ -71,6 +71,7 @@ signUp.addEventListener('click', e => {
 firebase.auth().onAuthStateChanged(firebaseUser => {
     if (firebaseUser){
         console.log(firebaseUser);
+        document.location.href = "studentGame.html";
     }
     else{
         console.log('not logged in')
