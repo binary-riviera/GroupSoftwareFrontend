@@ -1,6 +1,3 @@
-
-
-
 const firebaseConfig = {
     apiKey: "AIzaSyA38bRGCRCA5d58dRpjbg56iDEwXmvoT8s",
     authDomain: "groupsoftware-25ee9.firebaseapp.com",
@@ -14,18 +11,10 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 const login = document.getElementById('login');
-const signUp = document.getElementById('signUp');
 
 
 
-function registerUser(email,password){
-    console.log("waaaaaaaaaa")
-    firebase.auth().createUserWithEmailAndPassword(email, password).then(function(value) {
-        console.log(value);
-        }).catch(function(error) {
-            console.log(error);
-        });
-}
+
 
 
 
@@ -48,39 +37,13 @@ login.addEventListener('click', e => {
       });
 });
 
-signUp.addEventListener('click', e => {
-
-    const emailTxt = document.getElementById('email_address');
-    const passwordTxt = document.getElementById('password');
-
-    console.log('signing up');
-    var email = emailTxt.value.toString();
-    var pass  = passwordTxt.value.toString();
-    console.log(pass);
-
-    registerUser(email,pass);
-
-    //verification for exeter email
-    
-    
-
-    
-    console.log(firebase.auth().currentUser);
-});
 
 firebase.auth().onAuthStateChanged(firebaseUser => {
     if (firebaseUser){
         console.log(firebaseUser);
-        document.location.href = "studentGame.html";
+        document.location.href = "gameKeeper.html";
     }
     else{
         console.log('not logged in')
     }
 });
-
-
-
-
-
-
-
