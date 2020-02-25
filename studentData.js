@@ -115,6 +115,8 @@ usersRef.orderByValue().once("value").then(function(snapshot) {
 var players = [];
 
 
+/*
+// Order by clues in reverse Order
 function getPlayers(players){
 // goes in the players tree
 const query = firebase.database().ref("players")
@@ -136,7 +138,45 @@ query.on('value', (playersSnapshot) => {
       //printObj(players);
    }).then(printObj(players))
 })}
+*/
 
+function getPlayers(players){
+// goes in the players tree
+const query = firebase.database().ref("players")
+.orderByChild('clues')
+
+query.on('value', (playersSnapshot) => {
+  // for each tree in players (Gets individual players)
+   playersSnapshot.forEach((playerSnapshot) => {
+     //
+      let player = playerSnapshot.val();
+      // The objects which are made
+      players.push({
+        playerName:player.playerName,
+        playerCoordinates:player.playerCoordinates,
+        playerRoute:player.playerRoute,
+        clues:player.clues
+      })
+
+      //printObj(players);
+   }).then(leaderboard(players))
+})}
+
+
+
+function leaderboard(players){
+    players.reverse();
+    console.log("HERE");
+    console.log(players[3]);
+    console.log(players[0].clues);
+    console.log("Thereas");
+    for(i = 0 ; i < 4 ; i++){
+      console.log("YES");
+      console.log(players[i].playerName);
+      document.getElementById(i+'Name').innerHTML = players[i].playerName;
+      document.getElementById(i+'Value').innerHTML = players[i].clues;
+    }
+}
 
 
 
@@ -182,11 +222,12 @@ getPlayers(players);
 // Prints all the objetcs inside
 function printObj(players){
   for (let x in players) {
-    console.log(players[x]);
+    //How to get data
+    console.log(players[x].playerName);
   }
 }
 
-console.log(players);
+//console.log(players);
 
 //console.log(players['1']);
 //console.log(typeof(players));
