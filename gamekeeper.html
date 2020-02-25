@@ -11,6 +11,8 @@
 
 
     <div id="map"></div>
+    
+    <!--
     <script>
       var map;
       function initMap() {
@@ -71,6 +73,7 @@
 
       }
     </script>
+    -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAo3HuZoSpqpn-dZKP82crvGdJZhebIz6Q&callback=initMap"
     async defer></script>
 
@@ -87,27 +90,8 @@
             <th scope="col">Stages</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td id='1Name'>Neptunes</td>
-            <td id = '1Value'>4/5</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td id = '2Name'>Wailers</td>
-            <td id = '2Value'>4/5</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td id = '3Name'>E Street Band</td>
-            <td id = '3Value'>3/5</td>
-          </tr>
-          <tr>
-            <th scope="row">4</th>
-            <td td = '4Name'>Pharcyde</td>
-            <td id = '4Name'>1/5</td>
-          </tr>
+        <tbody id="teams">
+          <!--This is where the teams get added-->
         </tbody>
       </table>
       <h5 class="card-title">Feed</h5>
