@@ -112,12 +112,15 @@ usersRef.orderByValue().once("value").then(function(snapshot) {
 });
 */
 
-let players = [];
+var players = [];
 
 
 function getPlayers(players){
 // goes in the players tree
-firebase.database().ref("players").on('value', (playersSnapshot) => {
+const query = firebase.database().ref("players")
+.orderByChild('clues')
+
+query.on('value', (playersSnapshot) => {
   // for each tree in players (Gets individual players)
    playersSnapshot.forEach((playerSnapshot) => {
      //
