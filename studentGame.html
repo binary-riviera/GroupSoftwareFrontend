@@ -18,6 +18,25 @@
 </head>
 <body>
 
+  <!-- Initialize Firebase -->
+  <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
+
+<!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+<script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-analytics.js"></script>
+
+<!-- Add Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+
+
+<script src="studentScreen.js">
+</script>
+    <!-- Initialize Firebase -->
+
 <button onclick="window.location.href='introPage.html'" id = "gamekeeperLogin" class="btn btn-sm btn-danger" type="submit">Exit Game</button>
 
 
@@ -26,8 +45,12 @@
   <main class="game">
         <div class="row">
           <div class= "container">
-                <h4 class ="align-top" >*waiting for players*</h4>
-                <h4>3/5 waypoints reached</h4>
+                <h4 id="gameCondition" class ="align-top">Waiting for players</h4>
+                <div style="clear: both">
+                <h4 style="float: left" id="waypointNumber">0/5 waypoints reached</h4>
+                <h4 style="float: left">/5 waypoints reached </h4>
+              </div>
+              <hr />
             </div>
         </div>
       <div class="container clue"
