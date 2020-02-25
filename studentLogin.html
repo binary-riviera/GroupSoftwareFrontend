@@ -4,20 +4,30 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <!-- Fonts -->
 
+
     <link rel="stylesheet" type="text/css" href="gamekeeperLogin.css">
-	<!-- firebase script -->
-	<script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
-	
+
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 
     <title>Student Login</title>
+
+    
+
+
+
 </head>
 <body>
+    <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-auth.js"></script>
 
 <button onclick="window.location.href='introPage.html'">Back</button>
+
 
 
 <main class="login-form">
@@ -28,13 +38,13 @@
                 <div class="cards">
                     <div class="card-body">
 
-                        <form action="" method="">
+                        
                           <div class="form-group row">
                               <h2 for="password" class="col-md-8 col-form-label offset-md-3">User Name</h2>
                           </div>
                             <div class="form-group row">
                                 <div class="col-md-8 offset-md-3">
-                                    <input type="text" id="email_address" class="form-control" name="email-address" required >
+                                    <input type="email" id="email_address" class="form-control" name="email-address" required >
                                 </div>
                             </div>
 
@@ -60,23 +70,23 @@
 
                             <div class="form-group row">
                               <div class="col-md-8 offset-md-4">
-                              <button id="login" onclick="window.location.href='studentGame.html'" type="submit" class="btn btn-secondary">
-                                  Login
+                              <button class="btn btn-action" id = "login">
+                                  Log in
                               </button>
                             </div>
                             </div>
 
                             <div class="form-group row">
                               <div class="col-md-8 offset-md-4">
-                              <button id="reg" type="submit" class="btn btn-secondary">
-                                  Create Account
+                              <button  class="btn btn-secondary" id = "signUp">
+                                  Sign up
                               </button>
                             </div>
                             </div>
 
 
                           </div>
-                    </form>
+                    
                 </div>
             </div>
         </div>
@@ -84,7 +94,12 @@
     </div>
 
 </main>
-<!-- javascript event handler -->
-<script src = "authen.js"> </script>
+
+<script src="Authentication.js"></script>
+
+
+
+
+
 </body>
 </html>
