@@ -1,4 +1,12 @@
 
+/**
+ * A JavaScript file to allow for users to be authenticated.
+ *
+ * 
+ *
+ * @author Mbongeni Gulu, Louis Evans.
+ * @since  20/2/2020
+ */
 
 
 const firebaseConfig = {
