@@ -1,3 +1,14 @@
+/**
+ * A JavaScript file to allow for Geolocation updating
+ *
+ * 
+ *
+ * @author Daniel Cripps
+ * @since  26/2/2020
+ */
+
+
+
 // 4th decimal place
 // this is valid up to 11m 
 var isAtLoc = function(curLang, curLong, locLang, locLong) {
