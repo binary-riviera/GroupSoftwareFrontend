@@ -1,3 +1,8 @@
+
+
+
+
+
 const db = firebase.firestore();
 
 firebase.firestore().settings({
