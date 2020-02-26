@@ -1,4 +1,7 @@
 <!doctype html>
+<meta name="author" content="Mbongeni Gulu, Louis Evans, Connor Forsyth">
+<meta name="description" content="This page allows for a team to play the game, and will be the main page
+which they will have open while doing the orienteering.">
 <html lang="en">
 <head>
     <!-- Required meta tags -->
@@ -13,6 +16,20 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/dynamsoft-javascript-barcode@7/dist/dbr.min.js" data-productKeys="t0068NQAAAG7Qn5IqU60aACklhCh1547Y0AiXqatEALYx6fCb95M6PB96khQi9mJwTIZk0O9ozd7sYfjvmGU299RkqlSTlTs="></script>
+    <script>
+    function openCamera(){
+        let scanner = null;
+            Dynamsoft.BarcodeScanner.createInstance({
+                onFrameRead: results => {console.log(results);},
+                onUnduplicatedRead: (txt, result) => {alert(txt);}
+            }).then(s => {
+                scanner = s;
+                scanner.show();
+            });
+          }
+
+    </script>
 
     <title>Student Game</title>
 </head>
@@ -20,6 +37,11 @@
   <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-auth.js"></script>
+    
+
+
+
+
 
 <button id = "exitGame" class="btn btn-sm btn-danger">Exit Game</button>
 
@@ -34,22 +56,25 @@
             </div>
         </div>
       <div class="container clue"
-      <div class="row clue w-20 ">
-              <h4>*Clue 4 *</h4>
-              <h4>When new students arrive at University for the first time everything is new and it can be challenging
+      <div class="row clue w-20 " id = "clue">
+              *Clue 4 *
+              When new students arrive at University for the first time everything is new and it can be challenging
   for students to find their way around.
-            </h4>
+
       </div>
       </div>
 
       <div class="container">
         <div class="row camera justify-content-center">
-        <button onclick="window.location.href='introPage.html'" id = "gamekeeperLogin" class="btn btn-sm btn-primary" type="submit">Open Camera</button>
+
+
+
+        <button onclick="openCamera()" class="btn btn-sm btn-primary" type="submit">Open Camera</button>
+
       </div>
 
 
       <div class = "btn-group">
-
             <button onclick="window.location.href='introPage.html'" id = "studentLogin" class="btn btn-lg btn-secondary btn-block " type="submit">I need Help</button>
 
       </div>
@@ -82,7 +107,7 @@
 </div>
 
 
-
+<script src="studentClues.js"></script>
 
 
 
