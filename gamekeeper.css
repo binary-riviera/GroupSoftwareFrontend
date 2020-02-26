@@ -2,6 +2,16 @@ main > .container {
   padding: 60px 15px 0;
 }
 
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#map {
+  height: 100%;
+}
+
 #title {
   padding-left: 10px;
 }
@@ -27,7 +37,7 @@ main > .container {
 .card {
   position: absolute;
   top: 15px;
-  right: 15px; 
+  right: 15px;
 }
 
 ul{height:200px;}

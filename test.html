@@ -1,25 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<meta name="author" content="Mbongeni Gulu, Louis Evans">
-<meta name="description" content="This page is for the gamekeeper to monitor the players,
-and to change the game state of the game.">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="gamekeeper.css">
-  <title>Game Keeper Game</title>
+  <title>Document</title>
+
+
+
+
 </head>
 <body>
-  <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-firestore.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-auth.js"></script>
-
 
 
     <div id="map"></div>
-    
-    <!--
     <script>
       var map;
       function initMap() {
@@ -48,7 +43,6 @@ and to change the game state of the game.">
           var marker = new google.maps.Marker({
             position:props.coords,
             map :map,
-            //Icon
             icon:{path: google.maps.SymbolPath.CIRCLE,scale: 5},
           });
           if(props.content){
@@ -74,21 +68,14 @@ and to change the game state of the game.">
         }
 
 
-
-
-
-
       }
     </script>
-    -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAo3HuZoSpqpn-dZKP82crvGdJZhebIz6Q&callback=initMap"
     async defer></script>
 
-
-
   <div class="card float-right" style="width: 25rem;">
     <div class="card-body">
-      <h5 class="card-title">Leaderboard</h5>
+      <h5 class="card-title" id="nep" >Leaderboard</h5>
       <table class="table">
         <thead class="thead">
           <tr>
@@ -97,8 +84,27 @@ and to change the game state of the game.">
             <th scope="col">Stages</th>
           </tr>
         </thead>
-        <tbody id="teams">
-          <!--This is where the teams get added-->
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Neptunes</td>
+            <td >4/5</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Wailers</td>
+            <td>4/5</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>E Street Band</td>
+            <td>3/5</td>
+          </tr>
+          <tr>
+            <th scope="row">4</th>
+            <td>Pharcyde</td>
+            <td>1/5</td>
+          </tr>
         </tbody>
       </table>
       <h5 class="card-title">Feed</h5>
@@ -111,22 +117,43 @@ and to change the game state of the game.">
         <li class="list-group-item list-group-item-warning">"Losers 2" have left the game</li>
         <li class="list-group-item list-group-item-warning">"Losers 3" have left the game</li>
       </ul>
-      <button id = "exitGame" class="btn btn-sm btn-danger">Log out</button>
-      <script src = "logOut.js"></script>
-      <a href="#" onclick="gameStateChange()" class="btn btn-warning" style="margin-top: 20px;">End game</a>
+      <a href="#" class="btn btn-warning" style="margin-top: 20px;">End game</a>
     </div>
   </div>
   </div>
 
+  <script type="text/javascript">
+    var firebase = require("firebase");
+    var chat = require("./updateChat");
+
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyA38bRGCRCA5d58dRpjbg56iDEwXmvoT8s",
+        authDomain: "groupsoftware-25ee9.firebaseapp.com",
+        databaseURL: "https://groupsoftware-25ee9.firebaseio.com",
+        projectId: "groupsoftware-25ee9",
+        storageBucket: "groupsoftware-25ee9.appspot.com",
+        messagingSenderId: "1031394181045",
+        appId: "1:1031394181045:web:1de897f3b3aa98d89b23fc"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+
+    var database = firebase.database();
+    var nep = document.getElementById('nep').value;
+
+    var starCountRef = firebase.database().ref("playerCount");
+    starCountRef.on('child_added', function(snapshot) {
+      updateStarCount(nep,snapshot.val());
+    });
+
+
+
+  </script>
 
 
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
-
-
-  <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
-  <script src="studentData.js"></script>
 </body>
 </html>
