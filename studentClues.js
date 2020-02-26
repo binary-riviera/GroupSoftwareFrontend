@@ -1,15 +1,22 @@
 const db = firebase.firestore();
 
-console.log("ok");
 firebase.firestore().settings({
             cacheSizeBytes: firebase.firestore.CACHE_SIZE_UNLIMITED
         });
-console.log("ok");
+
+const clue = document.getElementById("clue");
 
 db.collection('Locations').get().then((snapshot) => {
   snapshot.docs.forEach(doc => {
-    console.log(doc.data())
-    console.log("ok");
+    console.log(doc.data());
+    console.log(doc.id);
+
   })
 })
-console.log("ok");
+
+db.collection('Routes').get().then((snapshot) => {
+  snapshot.docs.forEach(doc => {
+    console.log(doc.data());
+
+  })
+})
