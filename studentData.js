@@ -15,6 +15,13 @@ var database = firebase.database();
 
 var details = ['playerCoordinates', 'playerName']
 
+//TODO: Comment functions (in the format described below)
+/**
+ * Description here.
+ * 
+ * @param {type} var Description.
+ * @return {type} Return value description.
+ */
 function gameStateChange() {
   console.log("hello");
   document.location.href = 'gamekeeperEnd.html';
@@ -33,16 +40,6 @@ starCountRef.on('value', function (snapshot) {
   document.getElementById('nep').innerText = snapshot.val();
 });
 
-/*
-var urlRef = firebase.database().ref("players/player");
-urlRef.on("value", function(snapshot) {
-  snapshot.forEach(function(child) {
-    console.log(child.key+": "+child.val());
-  });
-});
-*/
-
-
 var name;
 // WHat table to get from
 var starCountRef = firebase.database().ref('players/player');
@@ -52,65 +49,7 @@ starCountRef.on('value', function (snapshot) {
   document.getElementById('nep').innerText = snapshot.val();
 });
 
-
-
-/*
-var countRef = firebase.database().ref('players');
-countRef.on('value').then(function(snapshot) {
-console.log(snapshot.val());
-snapshot.forEach(function(snapshot1) {
-  console.log(snapshot1.key); // e.g. "http://..."
-  snapshot.forEach(function(snapshot2) {
-    console.log(childSnapshot.key); // e.g. "20170116"
-    childSnapshot.forEach(function(snapshot3) {
-      console.log(grandchildSnapshot.key); // e.g. "-Kb9...gkE"
-      console.log(grandchildSnapshot.val().districtId); // "pne"
-    });
-  });
-});
-});
-*/
-
-/*  Prints the players
-let usersRef = firebase.database().ref('players');
-usersRef.orderByValue().on("value", function(snapshot) {
-    console.log(snapshot.val());
-    snapshot.forEach(function(data) {
-        console.log(data.key);
-    });
-});
-*/
-
-/* Gets all the locations but 3 times
-let usersRef = firebase.database().ref('players');
-usersRef.orderByValue().once("value").then(function(snapshot) {
-    console.log(snapshot.val());
-    snapshot.forEach(function(snapshot1) {
-        snapshot.forEach(function(snapsho2) {
-          console.log(snapsho2.val());
-
-        });
-
-    });
-});
-*/
-
-/*
-let usersRef = firebase.database().ref('players');
-usersRef.orderByValue().once("value").then(function(snapshot) {
-    console.log(snapshot.val());
-    snapshot.forEach(function(snapshot1) {
-        snapshot.forEach(function(snapsho2) {
-          console.log(snapsho2.val());
-
-        });
-
-    });
-});
-*/
-
 let players = [];
-
 
 function getPlayers(players) {
   // goes in the players tree
@@ -135,65 +74,6 @@ function getPlayers(players) {
     }).then(printObj(players))
   })
 }
-
-/*let chats = [];
-
-function getChats(chats) {
-  // goes in the players tree
-  firebase.database().ref("chat").on('value', (chatsSnapshot) => {
-    // for each tree in players (Gets individual players)
-    chats = [];
-    chatsSnapshot.forEach((chatsSnapshot) => {
-      //
-      let chat = chatsSnapshot.val();
-      // The objects which are made
-      chats.push({
-        messageName: chat.,
-      })
-
-      //printObj(players);
-    }).then(printObj(players))
-  })
-}*/
-
-
-
-
-/*
-function getPlayers(){
-firebase.database().ref("players").once('child_added', function(snap){
-      snap.forEach(function(childNodes){
-      var player = snap.val();
-
-      //console.log(player);
-      players.push({
-        playerName:player.playerName,
-        playerCoordinates:player.playerCoordinates,
-        playerRoute:player.playerRoute,
-        clues:player.clues
-      })
-
-
-      console.log("...");
-      //this works for getting the items
-      printObj(players);
-
-
-      // Adds child nodes to players
-
-      players.push(childNodes.val().playerName);
-      players.push(childNodes.val().playerCoordinates);
-      players.push(childNodes.val().playerRoute);
-      players.push(childNodes.val().playerLocation);
-      players.push(childNodes.val().clues);
-
-      return players;
-  });
-});}
-*/
-
-
-//var vex = getPlayers(players);
 
 // Prints all the objetcs inside
 function printObj(players) {
@@ -229,11 +109,8 @@ function printObj(players) {
 
 console.log(players);
 
-
 initMap();
 var map;
-
-//getPlayers(players);
 
 function initMap() {
   console.log("initialising map...");
@@ -282,5 +159,4 @@ function addMarker(props,map){
 
   //marker.setMap(map);
   allMarkers.push(marker);
-
 }
