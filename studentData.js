@@ -1,5 +1,12 @@
 
-
+/**
+ * A JavaScript file to allow for Firebase connectivity.
+ *
+ * 
+ *
+ * @author Mbongeni Gulu, Louis Evans.
+ * @since  20/2/2020
+ */
 
 
 firebase.initializeApp(firebaseConfig);
@@ -19,10 +26,6 @@ function gameStateEnd() {
   document.location.href = 'gamekeeper.html';
   firebase.database().ref("gameCondition").set('Start');
 }
-
-
-
-
 
 var starCountRef = firebase.database().ref('players/player');
 starCountRef.on('value', function (snapshot) {

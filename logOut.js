@@ -1,3 +1,13 @@
+
+/**
+ * A JavaScript file to allow for users to log out of the game.
+ *
+ * 
+ *
+ * @author Mbongeni Gulu, Louis Evans.
+ * @since  20/2/2020
+ */
+
 const firebaseConfig = {
     apiKey: "AIzaSyA38bRGCRCA5d58dRpjbg56iDEwXmvoT8s",
     authDomain: "groupsoftware-25ee9.firebaseapp.com",
