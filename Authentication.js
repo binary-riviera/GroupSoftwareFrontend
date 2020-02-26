@@ -27,15 +27,12 @@ const signUp = document.getElementById('signUp');
 
 
 function registerUser(email,password){
-    console.log("waaaaaaaaaa")
     firebase.auth().createUserWithEmailAndPassword(email, password).then(function(value) {
         console.log(value);
         }).catch(function(error) {
             console.log(error);
         });
 }
-
-
 
 login.addEventListener('click', e => {
 
@@ -75,14 +72,6 @@ signUp.addEventListener('click', e => {
         //add frontend
         console.log("must be exeter email address")
     }
-
-    
-
-    
-    
-    
-
-    
     console.log(firebase.auth().currentUser);
 });
 
@@ -95,10 +84,3 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
         console.log('not logged in')
     }
 });
-
-
-
-
-
-
-
