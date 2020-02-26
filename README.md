@@ -1,2 +1,3 @@
 # Group Software Project Frontend 
-hello
+
+Link to hosted page: https://binary-riviera.github.io/GroupSoftwareFrontend/introPage.html
