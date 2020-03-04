@@ -34,20 +34,19 @@ function gameStateEnd() {
   firebase.database().ref("gameCondition").set('Start');
 }
 
-var starCountRef = firebase.database().ref('players/player');
-starCountRef.on('value', function (snapshot) {
-  //console.log(snapshot.val());
-  document.getElementById('nep').innerText = snapshot.val();
-});
-
+//Getting alerts from students
 var name;
 // WHat table to get from
-var starCountRef = firebase.database().ref('players/player');
+var starCountRef = firebase.database().ref('alert');
 // Gets the valuei
-starCountRef.on('value', function (snapshot) {
-  name = snapshot.val();
-  document.getElementById('nep').innerText = snapshot.val();
+starCountRef.on('child_added', function (snapshot) {
+  let name = snapshot.val();
+  alert("TEAM " + name.playerName + " NEEDS HELP");
 });
+
+
+
+
 
 let players = [];
 
