@@ -4,7 +4,7 @@
  *
  *
  *
- * @author Mbongeni Gulu, Louis Evans.
+ * @author Connor Forsyth, Mbongeni Gulu, Louis Evans.
  * @since  20/2/2020
  */
 

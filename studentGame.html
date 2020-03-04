@@ -18,13 +18,41 @@ which they will have open while doing the orienteering.">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/dynamsoft-javascript-barcode@7/dist/dbr.min.js" data-productKeys="t0068NQAAAG7Qn5IqU60aACklhCh1547Y0AiXqatEALYx6fCb95M6PB96khQi9mJwTIZk0O9ozd7sYfjvmGU299RkqlSTlTs="></script>
     <script>
+    var current = 0;
+
+    function updateClue(result){
+      console.log(result);
+      // pick random route out of all Routes
+      var col = db.collection('Routes').doc("q2B78ABFQ0pDPom2Sxor").get();
+      //get current id
+      col.then(function(doc) {
+          if (doc.exists) {
+              var loc = doc.data().Locations;
+              console.log(loc[current].id);
+              if(result == loc[current].id){
+                alert("well done you found the location");
+                current+=1;
+                next = loc[current].id;
+                console.log(next);
+
+
+              }
+            }
+        });
+
+
+
+
+
+
+    }
     // QR CODE READER
     function openCamera(){
         let scanner = null;
             Dynamsoft.BarcodeScanner.createInstance({
                 // GETS THE RESULT
                 onFrameRead: results => {console.log(results);},
-                onUnduplicatedRead: (txt, result) => {alert(txt);}
+                onUnduplicatedRead: (txt, result) => {updateClue(txt);}
             }).then(s => {
                 scanner = s;
                 scanner.show();

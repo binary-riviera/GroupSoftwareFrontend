@@ -22,6 +22,17 @@ db.collection('Locations').get().then((snapshot) => {
 db.collection('Routes').get().then((snapshot) => {
   snapshot.docs.forEach(doc => {
     console.log(doc.data());
+    var data = doc.data();
+    console.log(doc.id);
 
   })
 })
+
+var col = db.collection('Routes').doc("q2B78ABFQ0pDPom2Sxor").get();
+
+col.then(function(doc) {
+    if (doc.exists) {
+        var loc = doc.data().Locations;
+        console.log(loc[0].id);
+      }
+  });
