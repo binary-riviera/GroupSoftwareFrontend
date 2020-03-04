@@ -2,7 +2,7 @@
 /**
  * A JavaScript file to allow for Firebase connectivity.
  *
- * 
+ *
  *
  * @author Mbongeni Gulu, Louis Evans.
  * @since  20/2/2020
@@ -18,7 +18,7 @@ var details = ['playerCoordinates', 'playerName']
 //TODO: Comment functions (in the format described below)
 /**
  * Description here.
- * 
+ *
  * @param {type} var Description.
  * @return {type} Return value description.
  */
@@ -55,7 +55,7 @@ function getPlayers(players) {
   // goes in the players tree
   const query = firebase.database().ref("players")
   .orderByChild('clues')
-  
+
   query.on('value', (playersSnapshot) => {
     // for each tree in players (Gets individual players)
     players = [];
@@ -91,7 +91,7 @@ function printObj(players) {
   for (let x in players) {
     //Add to leaderboard
     index = index + 1;
-    
+
     var tr = document.createElement('tr');
     tr.innerHTML = '<th scope="row">'+index+'</th><td>' + players[x].playerName + '</td><td>' + players[x].clues + '/5</td>';
     console.log(tr);
