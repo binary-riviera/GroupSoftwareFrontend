@@ -27,12 +27,3 @@ db.collection('Routes').get().then((snapshot) => {
 
   })
 })
-
-var col = db.collection('Routes').doc("q2B78ABFQ0pDPom2Sxor").get();
-
-col.then(function(doc) {
-    if (doc.exists) {
-        var loc = doc.data().Locations;
-        console.log(loc[0].id);
-      }
-  });
