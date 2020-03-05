@@ -1,7 +1,4 @@
 
-var database = firebase.database();
-
-
 var starCountRef = firebase.database().ref('gameCondition');
 
 starCountRef.on('value', function (snapshot) {

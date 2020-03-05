@@ -49,9 +49,7 @@ firebase.initializeApp(firebaseConfig);
 </script>
     <!-- Initialize Firebase -->
 <!-- student Alerts -->
-
-
-
+<script src="makePlayer.js"></script>
 
 <script src="studentScreen.js"></script>
 
@@ -163,12 +161,21 @@ function updateClue(result){
               });
             });
             document.getElementById('waypointNumber').innerText = current;
+            alert("well done you found the location");
           }
         }
     });
+    name = localStorage.getItem("studentName");
+    var userName = name.replace('@exeter.ac.uk','');
+
+    console.log(userName);
+    firebase.database().ref('players/'+userName).update({
+        clues : current+1,
+      });
+
 
     //document.location.href = "studentGame.html";
-    alert("well done you found the location");
+
 }
 // QR CODE READER
 function openCamera(){

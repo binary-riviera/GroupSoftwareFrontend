@@ -34,15 +34,7 @@ function gameStateEnd() {
   firebase.database().ref("gameCondition").set('Start');
 }
 
-//Getting alerts from students
-var name;
-// WHat table to get from
-var starCountRef = firebase.database().ref('alert');
-// Gets the valuei
-starCountRef.on('child_added', function (snapshot) {
-  let name = snapshot.val();
-  alert("TEAM " + name.playerName + " NEEDS HELP");
-});
+
 
 
 
@@ -159,3 +151,15 @@ function addMarker(props,map){
   //marker.setMap(map);
   allMarkers.push(marker);
 }
+
+
+//Getting alerts from students
+var name;
+// WHat table to get from
+var starCountRef = firebase.database().ref('alert');
+// Gets the valuei
+starCountRef.on('child_added', function (snapshot) {
+  let name = snapshot.val();
+  alert("TEAM " + name.playerName + " NEEDS HELP");
+  // ADD SOMETHING TO BRING UP THE PLAYER BOX
+});

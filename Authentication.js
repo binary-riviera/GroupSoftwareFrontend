@@ -41,7 +41,8 @@ login.addEventListener('click', e => {
 
     var email = emailTxt.value;
     var pass  = passwordTxt.value;
-    localStorage.setItem("studentName",email);
+    var userName = email.replace('@exeter.ac.uk','')
+    localStorage.setItem("studentName",userName);
     firebase.auth().signInWithEmailAndPassword(email, pass).catch(function(error) {
         console.log('nope');
 
