@@ -9,11 +9,11 @@ var isAtLoc = function(curLang, curLong, locLang, locLong) {
 
 name = localStorage.getItem("studentName");
 var updateDatabase = function(lat, long) {
-  firebase.database().ref('players/'+name+'/playerCoordinates').set({
+  firebase.database().ref('players/' + name + '/playerCoordinates').set({
     lat: lat,
     lng: long
   });
-  console.log('real time database updated!');
+  console.log('real time database updated with location');
 }
 
 

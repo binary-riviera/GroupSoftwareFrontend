@@ -2,97 +2,99 @@
 <html lang="en">
 <meta name="author" content="Mbongeni Gulu, Connor Forsyth">
 <meta name="description" content="This page allows the gamekeeper to log into the game.">
+
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Fonts -->
-<!-- Fonts -->
+  <!-- Fonts -->
+  <!-- Fonts -->
 
-    <link rel="stylesheet" type="text/css" href="gamekeeperLogin.css">
+  <link rel="stylesheet" type="text/css" href="gamekeeperLogin.css">
 
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 
-    <title>Game Keeper Login</title>
+  <title>Game Keeper Login</title>
 </head>
-<body>
-<button onclick="window.location.href='introPage.html'">Back</button>
 
-<script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-auth.js"></script>
-    <script>
+<body>
+  <button onclick="window.location.href='introPage.html'">Back</button>
+
+  <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-auth.js"></script>
+  <script>
     const firebaseConfig = {
-        apiKey: "AIzaSyA38bRGCRCA5d58dRpjbg56iDEwXmvoT8s",
-        authDomain: "groupsoftware-25ee9.firebaseapp.com",
-        databaseURL: "https://groupsoftware-25ee9.firebaseio.com",
-        projectId: "groupsoftware-25ee9",
-        storageBucket: "groupsoftware-25ee9.appspot.com",
-        messagingSenderId: "1031394181045",
-        appId: "1:1031394181045:web:1de897f3b3aa98d89b23fc"
+      apiKey: "AIzaSyA38bRGCRCA5d58dRpjbg56iDEwXmvoT8s",
+      authDomain: "groupsoftware-25ee9.firebaseapp.com",
+      databaseURL: "https://groupsoftware-25ee9.firebaseio.com",
+      projectId: "groupsoftware-25ee9",
+      storageBucket: "groupsoftware-25ee9.appspot.com",
+      messagingSenderId: "1031394181045",
+      appId: "1:1031394181045:web:1de897f3b3aa98d89b23fc"
     };
     firebase.initializeApp(firebaseConfig);
-</script>
+  </script>
 
-<main class="login-form">
+  <main class="login-form">
     <div class="cotainer flex-container">
-        <div class="row justify-content-center">
-            <div class="col">
-              <h1 id="pgHeader"> Gamekeeper Login </h1>
-                <div class="cards">
-                    <div class="card-body">
+      <div class="row justify-content-center">
+        <div class="col">
+          <h1 id="pgHeader"> Gamekeeper Login </h1>
+          <div class="cards">
+            <div class="card-body">
 
 
-                          <div class="form-group row">
-                              <h2 for="password" class="col-md-8 col-form-label offset-md-3">User Name</h2>
-                          </div>
+              <div class="form-group row">
+                <h2 for="password" class="col-md-8 col-form-label offset-md-3">User Name</h2>
+              </div>
 
-                            <div class="form-group row">
-                                <div class="col-md-8 offset-md-3">
-                                    <input type="email" id="email_address" class="form-control" name="email-address" required >
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <h2 for="password" class="col-md-8 col-form-label offset-md-3">Password</h2>
-                            </div>
-
-                            <div class="form-group row">
-
-                                <div class="col-md-8 offset-md-3">
-                                    <input type="password" id="password" class="form-control" name="password" required>
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <div class="col-md-6 offset-md-4">
-                                    <div class="checkbox">
-                                            <input type="checkbox" name="remember"> Remember Me
-
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6 offset-md-4">
-                                <button class="btn btn-action" id = "login">
-                                    Log in
-                                </button>
-
-                            </div>
-
-                          </div>
-
+              <div class="form-group row">
+                <div class="col-md-8 offset-md-3">
+                  <input type="email" id="email_address" class="form-control" name="email-address" required>
                 </div>
+              </div>
+
+              <div class="form-group row">
+                <h2 for="password" class="col-md-8 col-form-label offset-md-3">Password</h2>
+              </div>
+
+              <div class="form-group row">
+
+                <div class="col-md-8 offset-md-3">
+                  <input type="password" id="password" class="form-control" name="password" required>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-md-6 offset-md-4">
+                  <div class="checkbox">
+                    <input type="checkbox" name="remember"> Remember Me
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 offset-md-4">
+                <button class="btn btn-action" id="login">
+                  Log in
+                </button>
+
+              </div>
+
             </div>
+
+          </div>
         </div>
       </div>
     </div>
+    </div>
 
-</main>
-<script src="AuthenticationKeeper.js"></script>
+  </main>
+  <script src="AuthenticationKeeper.js"></script>
 
 
 
@@ -100,4 +102,5 @@
 
 
 </body>
+
 </html>

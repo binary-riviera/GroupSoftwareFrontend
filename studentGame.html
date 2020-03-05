@@ -3,91 +3,58 @@
 <meta name="description" content="This page allows for a team to play the game, and will be the main page
 which they will have open while doing the orienteering.">
 <html lang="en">
+
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Fonts -->
+  <!-- Fonts -->
+  <link rel="stylesheet" type="text/css" href="orientation.css">
 
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/dynamsoft-javascript-barcode@7/dist/dbr.min.js" data-productKeys="t0068NQAAAG7Qn5IqU60aACklhCh1547Y0AiXqatEALYx6fCb95M6PB96khQi9mJwTIZk0O9ozd7sYfjvmGU299RkqlSTlTs="></script>
+  <title>Student Game</title>
 
-    <link rel="stylesheet" type="text/css" href="orientation.css">
+  <!-- Initialize Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-database.js"></script>
+  <script src="fireConfig.js"></script>
 
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/dynamsoft-javascript-barcode@7/dist/dbr.min.js" data-productKeys="t0068NQAAAG7Qn5IqU60aACklhCh1547Y0AiXqatEALYx6fCb95M6PB96khQi9mJwTIZk0O9ozd7sYfjvmGU299RkqlSTlTs="></script>
-
-
-    <title>Student Game</title>
 </head>
 <body>
-  <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase.js"></script>
 
 
+  <!-- student Alerts -->
+  <script src="makePlayer.js"></script>
+  <script src="studentScreen.js"></script>
 
+  <button id="exitGame" class="btn btn-sm btn-danger">Exit Game</button>
 
+  <script src="logOut.js"></script>
 
+  <div class="container">
 
+    <script src="location.js"></script>
+    <p>Lang: <span id="lang"></span></p>
+    <p>Long: <span id="long"></span></p>
 
-<script>
-
-const firebaseConfig = {
-    apiKey: "AIzaSyA38bRGCRCA5d58dRpjbg56iDEwXmvoT8s",
-    authDomain: "groupsoftware-25ee9.firebaseapp.com",
-    databaseURL: "https://groupsoftware-25ee9.firebaseio.com",
-    projectId: "groupsoftware-25ee9",
-    storageBucket: "groupsoftware-25ee9.appspot.com",
-    messagingSenderId: "1031394181045",
-    appId: "1:1031394181045:web:1de897f3b3aa98d89b23fc"
-  };
-
-    firebase.initializeApp(firebaseConfig);
-
-
-firebase.auth().onAuthStateChanged(function(user) {
-  if (user) {
-    console.log("logged in");
-  } else {
-    document.location.href = "introPage.html";
-  }
-});
-
-
-
-</script>
-    <!-- Initialize Firebase -->
-<!-- student Alerts -->
-<script src="makePlayer.js"></script>
-
-<script src="studentScreen.js"></script>
-
-<button id = "exitGame" class="btn btn-sm btn-danger">Exit Game</button>
-
-<script src = "logOut.js"></script>
-
-<div class="container">
-
-  <script src="location.js"></script>
-  <p>Lang: <span id="lang"></span></p>
-  <p>Long: <span id="long"></span></p>
-
-  <main class="game">
-        <div class="row">
-          <div class= "container">
-                <h6 id="gameCondition" class ="align-top">Waiting for players</h6>
-                <div style="clear: both">
-                <h4 style="float: left" id="waypointNumber">...</h4>
-                <h4 style="float: left">/5 waypoints reached </h4>
-              </div>
-              <hr />
-            </div>
+    <main class="game">
+      <div class="row">
+        <div class="container">
+          <h6 id="gameCondition" class="align-top">Waiting for players</h6>
+          <div style="clear: both">
+            <h4 style="float: left" id="waypointNumber">...</h4>
+            <h4 style="float: left">/5 waypoints reached </h4>
+          </div>
+          <hr />
         </div>
+      </div>
       <div class="container clue">
-      <h3 id = "clue">  ...</h3>
+        <h3 id="clue"> ...</h3>
 
 
       </div>
@@ -98,125 +65,49 @@ firebase.auth().onAuthStateChanged(function(user) {
 
 
 
-        <button onclick="openCamera()" class="btn btn-sm btn-primary" type="submit">Open Camera</button>
+          <button onclick="openCamera()" class="btn btn-sm btn-primary" type="submit">Open Camera</button>
+
+        </div>
+
+
+        <div class="btn-group">
+          <button id="helpButton" class="btn btn-lg btn-secondary btn-block ">I need Help</button>
+
+        </div>
+
+        <div class="btn-group float-right">
+
+          <button onclick="window.location.href='faq.html'" class="btn pull-right btn-lg btn-secondary btn-block" type="submit">FAQ</button>
+
+        </div>
 
       </div>
 
-
-      <div class = "btn-group">
-            <button id ="helpButton" class="btn btn-lg btn-secondary btn-block ">I need Help</button>
-
+      <div class="container" <div class="h-25 row w-75 offset-md-1 list-group ">
+        <h5 class="card-title">Feed</h5>
+        <ul class="list-group h-25">
+          <li class="list-group-item list-group-item-success" id="chatbox1">"Neptunes" have reached the Forum</li>
+          <li class="list-group-item list-group-item-success">"Neptunes" have reached the Forum</li>
+          <li class="list-group-item list-group-item-danger">"E Street Band" have disconnected!</li>
+          <li class="list-group-item list-group-item-success">"Pharcyde" have reached Harrison</li>
+          <li class="list-group-item list-group-item-warning">"Losers" have left the game</li>
+          <li class="list-group-item list-group-item-warning">"Spooners" have left the game</li>
+          <li class="list-group-item list-group-item-warning">"Losers 2" have left the game</li>
+          <li class="list-group-item list-group-item-warning">"Losers 3" have left the game</li>
+        </ul>
       </div>
-
-      <div class = "btn-group float-right">
-
-            <button onclick="window.location.href='faq.html'"  class="btn pull-right btn-lg btn-secondary btn-block" type="submit">FAQ</button>
-
-      </div>
-
-      </div>
-
-    <div class="container"
-    <div class="h-25 row w-75 offset-md-1 list-group ">
-      <h5 class="card-title">Feed</h5>
-      <ul class="list-group h-25">
-        <li class="list-group-item list-group-item-success" id="chatbox1">"Neptunes" have reached the Forum</li>
-        <li class="list-group-item list-group-item-success">"Neptunes" have reached the Forum</li>
-        <li class="list-group-item list-group-item-danger">"E Street Band" have disconnected!</li>
-        <li class="list-group-item list-group-item-success">"Pharcyde" have reached Harrison</li>
-        <li class="list-group-item list-group-item-warning">"Losers" have left the game</li>
-        <li class="list-group-item list-group-item-warning">"Spooners" have left the game</li>
-        <li class="list-group-item list-group-item-warning">"Losers 2" have left the game</li>
-        <li class="list-group-item list-group-item-warning">"Losers 3" have left the game</li>
-      </ul>
-    </div>
-    </div>
+  </div>
 
   </main>
-</div>
+  </div>
 
 
-<script src="studentClues.js"></script>
-
-<script>
-var current = 0;
-document.getElementById('waypointNumber').innerText = current;
-
-var locClues = db.collection('Locations').doc("49FQBOBFgnZsoHzGXjvc").get();
-
-locClues.then(function(doc) {
-    var setClue = doc.data().Clue;
-    document.getElementById('clue').innerText = setClue;
-  });
-
-
-
-
-function updateClue(result){
-
-  // pick random route out of all Routes
-  var col = db.collection('Routes').doc("q2B78ABFQ0pDPom2Sxor").get();
-
-  //get current id
-  col.then(function(doc) {
-      if (doc.exists) {
-          var loc = doc.data().Locations;
-          var id = loc[current].id.replace(/\s/g, '');
-          if(result == id){
-            const clue = document.getElementById('clue');
-            current = current + 1;
-            db.collection('Locations').get().then((snapshot) => {
-              snapshot.docs.forEach(doc => {
-                var id = loc[current].id.replace(/\s/g, '');
-                if (doc.id == id)
-                  clue.innerHTML = doc.data().Clue;
-              });
-            });
-            document.getElementById('waypointNumber').innerText = current;
-            alert("well done you found the location");
-          }
-        }
-    });
-    name = localStorage.getItem("studentName");
-    var userName = name.replace('@exeter.ac.uk','');
-
-    console.log(userName);
-    firebase.database().ref('players/'+userName).update({
-        clues : current+1,
-      });
-
-
-    //document.location.href = "studentGame.html";
-
-}
-// QR CODE READER
-function openCamera(){
-    let scanner = null;
-        Dynamsoft.BarcodeScanner.createInstance({
-            // GETS THE RESULT
-            onFrameRead: results => {console.log(results)},
-            onUnduplicatedRead: (txt, result) => {updateClue(txt);}
-        }).then(s => {
-            scanner = s;
-            scanner.show();
-        });
-      }
-
-</script>
-
-<!---- Gets alerts from students---->
-<script>
-document.getElementById("helpButton").addEventListener("click", function(){
-      name = localStorage.getItem("studentName");
-      alert("Game Keeper has been notfied " + name);
-      firebase.database().ref('alert/'+'alert'+name).set({
-          playerName: name,
-        });
-      });
-
-</script>
+  <script src = "studentCam.js"></script>
+  <!---- Gets alerts from students---->
+  <script src = "studentHelp.js"></script>
 
 
 
 </body>
+
 </html>
