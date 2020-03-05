@@ -14,7 +14,7 @@ and to change the game state of the game.">
   <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-firestore.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase.js"></script>
   <script>
 
   const firebaseConfig = {
@@ -26,6 +26,15 @@ and to change the game state of the game.">
       messagingSenderId: "1031394181045",
       appId: "1:1031394181045:web:1de897f3b3aa98d89b23fc"
   };
+  firebase.initializeApp(firebaseConfig);
+
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      console.log("logged in");
+    } else {
+      document.location.href = "introPage.html";
+    }
+  });
 
   </script>
 
