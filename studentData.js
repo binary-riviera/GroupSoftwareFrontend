@@ -19,13 +19,13 @@ var details = ['playerCoordinates', 'playerName']
  * @return {type} Return value description.
  */
 function gameStateChange() {
-  console.log("hello");
+
   document.location.href = 'gamekeeperEnd.html';
   firebase.database().ref("gameCondition").set('End');
 }
 
 function gameStateEnd() {
-  console.log("hello");
+
   document.location.href = 'gamekeeper.html';
   firebase.database().ref("gameCondition").set('Start');
 }
@@ -66,8 +66,7 @@ function printObj(players) {
     list.removeChild(list.lastChild);
   }
 
-  console.log("list: " + list.innerHTML);
-  console.log("players: " + players);
+
 
   for (let x in players) {
     //Add to leaderboard
@@ -75,7 +74,7 @@ function printObj(players) {
 
     var tr = document.createElement('tr');
     tr.innerHTML = '<th scope="row">' + index + '</th><td>' + players[x].playerName + '</td><td>' + players[x].clues + '/5</td>';
-    console.log(tr);
+
     list.appendChild(tr);
 
     //Add marker
@@ -90,7 +89,7 @@ function printObj(players) {
   }
 }
 
-console.log(players);
+
 
 initMap();
 var map;
@@ -118,15 +117,12 @@ var allMarkers = [];
 function addMarker(props, map) {
 
   for (let x in allMarkers) {
-    console.log("x: " + allMarkers[x].title + " props: " + props.content);
+
     if (allMarkers[x].title == props.content) {
       allMarkers[x].setMap(null);
     }
   }
 
-  console.log("markers: " + allMarkers);
-
-  console.log("props::: " + JSON.stringify(props.coords));
 
   var marker = new google.maps.Marker({
     position: props.coords,
