@@ -1,5 +1,5 @@
 // 4th decimal place
-// this is valid up to 11m 
+// this is valid up to 11m
 var isAtLoc = function(curLang, curLong, locLang, locLong) {
   if (curLang.toFixed(4) === locLang.toFixed(4) && curLong.toFixed(4) === locLong.toFixed()) {
     return true;
@@ -7,8 +7,9 @@ var isAtLoc = function(curLang, curLong, locLang, locLong) {
   return false;
 }
 
+name = localStorage.getItem("studentName");
 var updateDatabase = function(lat, long) {
-  firebase.database().ref('players/player/playerCoordinates').set({
+  firebase.database().ref('players/'+name+'/playerCoordinates').set({
     lat: lat,
     lng: long
   });

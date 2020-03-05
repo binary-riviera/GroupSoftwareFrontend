@@ -2,14 +2,14 @@
 /**
  * A JavaScript file to allow for Firebase connectivity.
  *
- * 
+ *
  *
  * @author Mbongeni Gulu, Louis Evans.
  * @since  20/2/2020
  */
 
 
-firebase.initializeApp(firebaseConfig);
+
 
 var database = firebase.database();
 
@@ -18,7 +18,7 @@ var details = ['playerCoordinates', 'playerName']
 //TODO: Comment functions (in the format described below)
 /**
  * Description here.
- * 
+ *
  * @param {type} var Description.
  * @return {type} Return value description.
  */
@@ -34,20 +34,11 @@ function gameStateEnd() {
   firebase.database().ref("gameCondition").set('Start');
 }
 
-var starCountRef = firebase.database().ref('players/player');
-starCountRef.on('value', function (snapshot) {
-  //console.log(snapshot.val());
-  document.getElementById('nep').innerText = snapshot.val();
-});
 
-var name;
-// WHat table to get from
-var starCountRef = firebase.database().ref('players/player');
-// Gets the valuei
-starCountRef.on('value', function (snapshot) {
-  name = snapshot.val();
-  document.getElementById('nep').innerText = snapshot.val();
-});
+
+
+
+
 
 let players = [];
 
@@ -55,7 +46,7 @@ function getPlayers(players) {
   // goes in the players tree
   const query = firebase.database().ref("players")
   .orderByChild('clues')
-  
+
   query.on('value', (playersSnapshot) => {
     // for each tree in players (Gets individual players)
     players = [];
@@ -91,7 +82,7 @@ function printObj(players) {
   for (let x in players) {
     //Add to leaderboard
     index = index + 1;
-    
+
     var tr = document.createElement('tr');
     tr.innerHTML = '<th scope="row">'+index+'</th><td>' + players[x].playerName + '</td><td>' + players[x].clues + '/5</td>';
     console.log(tr);
@@ -160,3 +151,15 @@ function addMarker(props,map){
   //marker.setMap(map);
   allMarkers.push(marker);
 }
+
+
+//Getting alerts from students
+var name;
+// WHat table to get from
+var starCountRef = firebase.database().ref('alert');
+// Gets the valuei
+starCountRef.on('child_added', function (snapshot) {
+  let name = snapshot.val();
+  alert("TEAM " + name.playerName + " NEEDS HELP");
+  // ADD SOMETHING TO BRING UP THE PLAYER BOX
+});
