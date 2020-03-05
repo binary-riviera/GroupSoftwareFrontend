@@ -14,6 +14,7 @@ db.collection('Routes').get().then((snapshot) => {
   var ran = Math.floor(Math.random() * count);
   currentRoute = routeIDs[ran];
   var col = db.collection('Routes').doc(currentRoute).get();
+  localStorage.setItem("col", col);
 
   //get id of first location
   col.then(function(doc) {
@@ -35,7 +36,7 @@ function updateClue(result) {
 
   var ran = Math.floor(Math.random() * 11);
 
-  var col = db.collection('Routes').doc("q2B78ABFQ0pDPom2Sxor").get();
+  localStorage.getItem('col');
 
   //get current id
   col.then(function(doc) {
