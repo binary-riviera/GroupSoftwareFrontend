@@ -41,16 +41,18 @@ and to change the game state of the game.">
           <!--This is where the teams get added-->
         </tbody>
       </table>
-      <h5 class="card-title">Feed</h5>
-      <ul class="list-group">
-        <li class="list-group-item list-group-item-success">"Neptunes" have reached the Forum</li>
-        <li class="list-group-item list-group-item-danger">"E Street Band" have disconnected!</li>
-        <li class="list-group-item list-group-item-success">"Pharcyde" have reached Harrison</li>
-        <li class="list-group-item list-group-item-warning">"Losers" have left the game</li>
-        <li class="list-group-item list-group-item-warning">"Spooners" have left the game</li>
-        <li class="list-group-item list-group-item-warning">"Losers 2" have left the game</li>
-        <li class="list-group-item list-group-item-warning">"Losers 3" have left the game</li>
-      </ul>
+      <h2 class="card-title">Feed</h2>
+
+      <div class="tableFixHead">
+        <table>
+          <thead>
+
+          </thead>
+          <tbody id = "feed">
+
+          </tbody>
+        </table>
+      </div>
       <button id="exitGame" class="btn btn-sm btn-danger">Log out</button>
       <script src="logOut.js"></script>
       <a href="#" onclick="gameStateChange()" class="btn btn-warning" style="margin-top: 20px;">End game</a>
@@ -65,5 +67,7 @@ and to change the game state of the game.">
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
 </body>
+
+  <script src="feed.js"></script>
 
 </html>

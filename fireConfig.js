@@ -22,6 +22,7 @@ firebase.firestore().settings({
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     console.log("logged in");
+
   } else {
     document.location.href = "introPage.html";
   }

@@ -159,6 +159,6 @@ var starCountRef = firebase.database().ref('alert');
 // Gets the valuei
 starCountRef.on('child_added', function(snapshot) {
   let name = snapshot.val();
-  alert("TEAM " + name.playerName + " NEEDS HELP");
+  alert("PLAYER " + name.playerName + " NEEDS HELP");
   // ADD SOMETHING TO BRING UP THE PLAYER BOX
 });
