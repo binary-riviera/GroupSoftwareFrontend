@@ -1,39 +1,33 @@
-
+/**
+ * A JavaScript file to allow for users to be authenticated.
+ *
+ *
+ *
+ * @author Connor Forsyth
+ * @since  20/2/2020
+ */
 
 const login = document.getElementById('login');
-
-
-
-
-
-
-
 login.addEventListener('click', e => {
 
-    const emailTxt = document.getElementById('email_address');
-    const passwordTxt = document.getElementById('password');
+  const emailTxt = document.getElementById('email_address');
+  const passwordTxt = document.getElementById('password');
 
-    var email = emailTxt.value;
-    var pass  = passwordTxt.value;
+  var email = emailTxt.value;
+  var pass = passwordTxt.value;
 
-    firebase.auth().signInWithEmailAndPassword(email, pass).catch(function(error) {
-        console.log('nope');
+  firebase.auth().signInWithEmailAndPassword(email, pass).catch(function(error) {
 
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        console.log(errorCode);
-        console.log(errorMessage);
-
-      });
+    alert("Password or User Name are incorrect. Please Try Again");
+    var errorCode = error.code;
+    var errorMessage = error.message;
+  });
 });
 
-
 firebase.auth().onAuthStateChanged(firebaseUser => {
-    if (firebaseUser){
-        console.log(firebaseUser);
-        document.location.href = "gamekeeper.html";
-    }
-    else{
-        console.log('not logged in')
-    }
+  if (firebaseUser) {
+    document.location.href = "gamekeeper.html";
+  } else {
+    console.log('not logged in')
+  }
 });
