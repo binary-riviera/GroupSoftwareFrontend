@@ -39,7 +39,7 @@ function updateClue(result) {
   name = localStorage.getItem("studentName");
   var userName = name.replace('@exeter.ac.uk', '');
 
-  console.log(userName);
+
   firebase.database().ref('players/' + userName).update({
     clues: current + 1,
   });
@@ -54,7 +54,6 @@ function openCamera() {
   Dynamsoft.BarcodeScanner.createInstance({
     // GETS THE RESULT
     onFrameRead: results => {
-      console.log(results)
     },
     onUnduplicatedRead: (txt, result) => {
       updateClue(txt);

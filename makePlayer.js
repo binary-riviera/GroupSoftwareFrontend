@@ -1,8 +1,6 @@
-var database = firebase.database();
-
 
 name = localStorage.getItem("studentName");
-console.log("IN HERE WITH + " + name);
+
 
 
 var starCountRef = firebase.database().ref('gameCondition');

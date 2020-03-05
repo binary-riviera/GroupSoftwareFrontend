@@ -9,14 +9,13 @@ out.addEventListener('click', e => {
     // An error happened.
     var errorCode = error.code;
     var errorMessage = error.message;
-    console.log(errorCode);
-    console.log(errorMessage);
+
 
   });
 
   firebase.auth().onAuthStateChanged(firebaseUser => {
     if (firebaseUser) {
-      console.log(firebaseUser);
+
     } else {
       document.location.href = "introPage.html";
     }

@@ -13,9 +13,9 @@ const signUp = document.getElementById('signUp');
 
 function registerUser(email, password) {
   firebase.auth().createUserWithEmailAndPassword(email, password).then(function(value) {
-    console.log(value);
+    console.log("signed up");
   }).catch(function(error) {
-    console.log(error);
+
   });
 }
 
@@ -33,8 +33,7 @@ login.addEventListener('click', e => {
 
     var errorCode = error.code;
     var errorMessage = error.message;
-    console.log(errorCode);
-    console.log(errorMessage);
+
 
   });
 });
@@ -47,7 +46,7 @@ signUp.addEventListener('click', e => {
   console.log('signing up');
   var email = emailTxt.value.toString();
   var pass = passwordTxt.value.toString();
-  console.log(pass);
+
 
   //verification for exeter email
   var substring = "exeter.ac.uk"

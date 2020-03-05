@@ -30,12 +30,6 @@ function gameStateEnd() {
   firebase.database().ref("gameCondition").set('Start');
 }
 
-
-
-
-
-
-
 let players = [];
 
 function getPlayers(players) {
