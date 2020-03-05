@@ -7,4 +7,65 @@
 
 #pgHeader {
   text-align: center;
+  font-family: "Montserrat";
+  color: white;
+  font-weight: 900;
+}
+
+.field-title{
+  color:white;
+  font-family: "Montserrat";
+  font-weight: 700;
+  font-size: medium;
+  margin-top: 30px;
+}
+
+.form-control{
+  border-style: none;
+}
+
+.back-button{
+  z-index: 2;
+  top: 5px;
+  left: 5px;
+  position: absolute;
+  border-style: none;
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: medium;
+  padding: 20px;
+  border-radius: 5px;
+  color: green;
+}
+
+.back-button:hover{
+  background-color: lightgreen;
+  color: white;
+  cursor: pointer;
+}
+
+.remember-me{
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: small;
+  color:white;
+  margin-top: 20px;
+}
+
+.section{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.section video{
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 100vh;
+  min-width: 100vw;
 }

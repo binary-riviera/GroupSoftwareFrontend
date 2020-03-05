@@ -36,74 +36,56 @@
     firebase.initializeApp(firebaseConfig);
   </script>
 
-  <button onclick="window.location.href='introPage.html'">Back</button>
+  <div class="section">
+    <video autoplay loop muted>
+      <source src="backgroundvideo.mp4" type="video/mp4">
+    </video>
 
+    <button class="back-button" onclick="window.location.href='introPage.html'">Back</button>
 
+    <main class="login-form">
+      <div class="cotainer flex-container">
+        <div class="row justify-content-center">
+          <div class="col">
+            <h1 id="pgHeader"> Student Login 🎓</h1>
+            <div class="cards">
+              <div class="card-body">
 
-  <main class="login-form">
-    <div class="cotainer flex-container">
-      <div class="row justify-content-center">
-        <div class="col">
-          <h1 id="pgHeader"> Student Login </h1>
-          <div class="cards">
-            <div class="card-body">
+                <h2 class="field-title">Exeter Email</h2>
+                <input type="email" id="email_address" class="form-control" name="email-address" required>
 
+                <h2 class="field-title">Password</h2>
+                <input type="password" id="password" class="form-control" name="password" required>
 
-              <div class="form-group row">
-                <h2 for="password" class="col-md-8 col-form-label offset-md-3">Exeter Email</h2>
-              </div>
-              <div class="form-group row">
-                <div class="col-md-8 offset-md-3">
-                  <input type="email" id="email_address" class="form-control" name="email-address" required>
-                </div>
-              </div>
+                <input type="checkbox" name="remember"> <label for="remember" class="remember-me"> Remember Me</label>
 
-              <div class="form-group row">
-                <h2 for="password" class="col-md-8 col-form-label offset-md-3">Password</h2>
-              </div>
-
-              <div class="form-group row">
-                <div class="col-md-8 offset-md-3">
-                  <input type="password" id="password" class="form-control" name="password" required>
-                </div>
-              </div>
-
-              <div class="form-group row">
-                <div class="col-md-6 offset-md-3">
-                  <div class="checkbox">
-
-                    <input type="checkbox" name="remember"> Remember Me
-
+                <div class="form-group row">
+                  <div class="col-md-8 offset-md-4">
+                    <button class="btn btn-action" id="login">
+                      Log in
+                    </button>
                   </div>
                 </div>
-              </div>
 
-              <div class="form-group row">
-                <div class="col-md-8 offset-md-4">
-                  <button class="btn btn-action" id="login">
-                    Log in
-                  </button>
+                <div class="form-group row">
+                  <div class="col-md-8 offset-md-4">
+                    <button class="btn btn-secondary" id="signUp">
+                      Sign up
+                    </button>
+                  </div>
                 </div>
-              </div>
 
-              <div class="form-group row">
-                <div class="col-md-8 offset-md-4">
-                  <button class="btn btn-secondary" id="signUp">
-                    Sign up
-                  </button>
-                </div>
-              </div>
 
+              </div>
 
             </div>
-
           </div>
         </div>
       </div>
-    </div>
-    </div>
+  </div>
 
   </main>
+  </div>
 
   <script src="Authentication.js"></script>
 
