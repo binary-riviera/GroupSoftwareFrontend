@@ -21,6 +21,7 @@ function registerUser(email, password) {
 
 login.addEventListener('click', e => {
 
+
   const emailTxt = document.getElementById('email_address');
   const passwordTxt = document.getElementById('password');
 
@@ -28,14 +29,17 @@ login.addEventListener('click', e => {
   var pass = passwordTxt.value;
   var userName = email.replace('@exeter.ac.uk', '')
   localStorage.setItem("studentName", userName);
-  firebase.auth().signInWithEmailAndPassword(email, pass).catch(function(error) {
-    alert("Password or User Name are incorrect. Please Try Again");
+  firebase.auth().signInWithEmailAndPassword(email, pass)
+    .catch(function(error) {
+      alert("Password or User Name are incorrect. Please Try Again");
 
-    var errorCode = error.code;
-    var errorMessage = error.message;
+      var errorCode = error.code;
+      var errorMessage = error.message;
 
 
-  });
+    });
+
+
 });
 
 signUp.addEventListener('click', e => {
@@ -61,6 +65,7 @@ signUp.addEventListener('click', e => {
 firebase.auth().onAuthStateChanged(firebaseUser => {
   if (firebaseUser) {
     console.log(firebaseUser);
+
     document.location.href = "studentGame.html";
   } else {
     console.log('not logged in')
