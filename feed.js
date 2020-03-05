@@ -6,12 +6,10 @@ feedValues.on('child_added', function(snapshot) {
   var value = snapshot.val();
 
   arrVal.push(value);
-  console.log(arrVal);
 
   //set feedValues
   var lengthFeed = arrVal.length;
   localStorage.setItem("lengthFeed", lengthFeed);
-  console.log(lengthFeed);
 
 
   var list = document.getElementById('feed');

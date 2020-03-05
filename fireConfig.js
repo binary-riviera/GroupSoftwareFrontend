@@ -22,14 +22,6 @@ firebase.firestore().settings({
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     console.log("logged in");
-    var name = localStorage.getItem("studentName")
-    var len = localStorage.getItem("lengthFeed");
-    console.log(len);
-    firebase.database().ref().child('feed').update({
-        [len]:"Player " + name + " has joined the game"
-    });
-    console.log('real time database updated with login');
-
 
   } else {
     document.location.href = "introPage.html";
