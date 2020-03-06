@@ -1,49 +1,52 @@
-const firebaseConfig = {
-    apiKey: "AIzaSyA38bRGCRCA5d58dRpjbg56iDEwXmvoT8s",
-    authDomain: "groupsoftware-25ee9.firebaseapp.com",
-    databaseURL: "https://groupsoftware-25ee9.firebaseio.com",
-    projectId: "groupsoftware-25ee9",
-    storageBucket: "groupsoftware-25ee9.appspot.com",
-    messagingSenderId: "1031394181045",
-    appId: "1:1031394181045:web:1de897f3b3aa98d89b23fc"
-};
-
-firebase.initializeApp(firebaseConfig);
+/**
+ * A JavaScript file to allow for users to be authenticated.
+ *
+ *
+ *
+ * @author Connor Forsyth
+ * @since  20/2/2020
+ */
+const db = firebase.firestore();
 
 const login = document.getElementById('login');
 
 
-
-
-
-
-
 login.addEventListener('click', e => {
 
-    const emailTxt = document.getElementById('email_address');
-    const passwordTxt = document.getElementById('password');
+  const emailTxt = document.getElementById('email_address');
+  const passwordTxt = document.getElementById('password');
+  const keyTxt = document.getElementById('key');
 
-    var email = emailTxt.value;
-    var pass  = passwordTxt.value;
+  var email = emailTxt.value;
+  var pass = passwordTxt.value;
+  var keyVal = keyTxt.value;
+  console.log(keyVal);
 
-    firebase.auth().signInWithEmailAndPassword(email, pass).catch(function(error) {
-        console.log('nope');
+  db.collection('Key').get().then((snapshot) => {
+    snapshot.docs.forEach(doc => {
+      var code = doc.data().code;
 
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        console.log(errorCode);
-        console.log(errorMessage);
+      if(code == keyVal){
+        console.log(code);
+        firebase.auth().signInWithEmailAndPassword(email, pass).catch(function(error) {
 
-      });
+          alert("Password or User Name are incorrect. Please Try Again");
+          var errorCode = error.code;
+          var errorMessage = error.message;
+        });
+      }else{
+        alert("Key is incorrect. Please Try Again");
+      }
+    });
+  });
+
 });
 
 
 firebase.auth().onAuthStateChanged(firebaseUser => {
-    if (firebaseUser){
-        console.log(firebaseUser);
-        document.location.href = "gameKeeper.html";
-    }
-    else{
-        console.log('not logged in')
-    }
+  if (firebaseUser) {
+    document.location.href = "gamekeeper.html";
+  } else {
+    console.log('not logged in')
+  }
 });

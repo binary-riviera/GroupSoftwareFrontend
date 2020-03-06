@@ -2,6 +2,7 @@
 <html lang="en">
 <meta name="author" content="Mbongeni Gulu">
 <meta name="description" content="This page is for when the game has ended, and is waiting for players to join.">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
@@ -9,68 +10,85 @@
   <link rel="stylesheet" href="gamekeeper.css">
   <title>gamekeeperEnd</title>
 </head>
+
 <body>
 
 
-    <div id="map"></div>
-    <script>
-      var map;
-      function initMap() {
-        // Map settings
-        var options = { center: {lat:50.736683, lng:-3.535371},zoom: 16 }
-        // Create map
-        map = new google.maps.Map(document.getElementById('map'),options);
-        //Icons
-        /*
-        var marker = new google.maps.Marker({
-          position:{lat:50.735418, lng:-3.533251},
-          map :map,
-          icon:{path: google.maps.SymbolPath.CIRCLE,scale: 5},
-        });
-        // Team name
 
-        var infoWindow = new google.maps.InfoWindow({
-          content:'<h1>TEAM F </h1>'
-        });
+  <div id="map"></div>
+  <script>
+    var map;
 
-        marker.addListener('click',function(){infoWindow.open(map,marker);});
-        */
-
-        // ADD new Marker
-        function addMarker(props){
-          var marker = new google.maps.Marker({
-            position:props.coords,
-            map :map,
-            //Icon
-            icon:{path: google.maps.SymbolPath.CIRCLE,scale: 5},
-          });
-          if(props.content){
-            // Team name
-            var infoWindow = new google.maps.InfoWindow({
-              content:props.content
-            });
-            // Click
-            marker.addListener('click',function(){infoWindow.open(map,marker);});
-          }
-        }
-        // Adding a marker
-
-        // Array of markers
-        var markers = [
-          {coords:{lat:50.735418, lng:-3.533251},content:'<h1>TEAM F</h1>'},
-          {coords:{lat:50.735418, lng:-3.563251},content:'<h1>TEAM A</h1>'},
-          {coords:{lat:50.735418, lng:-3.503251},content:'<h1>TEAM B</h1>'}
-        ];
-        //Loop
-        for(var i=0;i < markers.length;i++){
-          addMarker(markers[i]);
-        }
-
-
+    function initMap() {
+      // Map settings
+      var options = {
+        center: {
+          lat: 50.736683,
+          lng: -3.535371
+        },
+        zoom: 16
       }
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAo3HuZoSpqpn-dZKP82crvGdJZhebIz6Q&callback=initMap"
-    async defer></script>
+      // Create map
+      map = new google.maps.Map(document.getElementById('map'), options);
+      //Icons
+
+
+      // ADD new Marker
+      function addMarker(props) {
+        var marker = new google.maps.Marker({
+          position: props.coords,
+          map: map,
+          //Icon
+          icon: {
+            path: google.maps.SymbolPath.CIRCLE,
+            scale: 5
+          },
+        });
+        if (props.content) {
+          // Team name
+          var infoWindow = new google.maps.InfoWindow({
+            content: props.content
+          });
+          // Click
+          marker.addListener('click', function() {
+            infoWindow.open(map, marker);
+          });
+        }
+      }
+      // Adding a marker
+
+      // Array of markers
+      var markers = [{
+          coords: {
+            lat: 50.735418,
+            lng: -3.533251
+          },
+          content: '<h1>TEAM F</h1>'
+        },
+        {
+          coords: {
+            lat: 50.735418,
+            lng: -3.563251
+          },
+          content: '<h1>TEAM A</h1>'
+        },
+        {
+          coords: {
+            lat: 50.735418,
+            lng: -3.503251
+          },
+          content: '<h1>TEAM B</h1>'
+        }
+      ];
+      //Loop
+      for (var i = 0; i < markers.length; i++) {
+        addMarker(markers[i]);
+      }
+
+
+    }
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAo3HuZoSpqpn-dZKP82crvGdJZhebIz6Q&callback=initMap" async defer></script>
 
 
 
@@ -108,21 +126,25 @@
           </tr>
         </tbody>
       </table>
-      <h5 class="card-title">Feed</h5>
-      <ul class="list-group">
-        <li class="list-group-item list-group-item-success">"Neptunes" Has 5/5</li>
-        <li class="list-group-item list-group-item-danger">"E Street Has 5/5</li>
-        <li class="list-group-item list-group-item-success">"Pharcyde" 5/5</li>
-        <li class="list-group-item list-group-item-warning">"Losers" have left the game</li>
-        <li class="list-group-item list-group-item-warning">"Spooners" have left the game</li>
-        <li class="list-group-item list-group-item-warning">"Losers 2" have left the game</li>
-        <li class="list-group-item list-group-item-warning">"Losers 3" have left the game</li>
-      </ul>
-      <a href="#"  onclick="gameStateEnd()" class="btn btn-warning" style="margin-top: 20px;">Start Game</a>
+
+      <h2 class="card-title">Feed</h2>
+
+      <div class="tableFixHead" id="scrollTable">
+        <table>
+          <thead>
+
+          </thead>
+          <tbody id = "feed">
+
+          </tbody>
+        </table>
+      </div>
+      <button id="exitGame" class="btn btn-sm btn-danger">Log out</button>
+      <script src="logOut.js"></script>
+      <a href="#" onclick="gameStateEnd()" class="btn btn-warning" style="margin-top: 20px;">Start Game</a>
     </div>
   </div>
   </div>
-
 
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -134,7 +156,30 @@
   <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-analytics.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-firestore.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase.js"></script>
   <script src="studentData.js"></script>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyA38bRGCRCA5d58dRpjbg56iDEwXmvoT8s",
+      authDomain: "groupsoftware-25ee9.firebaseapp.com",
+      databaseURL: "https://groupsoftware-25ee9.firebaseio.com",
+      projectId: "groupsoftware-25ee9",
+      storageBucket: "groupsoftware-25ee9.appspot.com",
+      messagingSenderId: "1031394181045",
+      appId: "1:1031394181045:web:1de897f3b3aa98d89b23fc"
+    };
+    firebase.initializeApp(firebaseConfig);
+
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        console.log("logged in");
+      } else {
+        document.location.href = "introPage.html";
+      }
+    });
+  </script>
 </body>
+<script src="feed.js"></script>
+
 </html>

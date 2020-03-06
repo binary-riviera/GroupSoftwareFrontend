@@ -8,65 +8,37 @@ like to log into - Student or Gamekeeper.">
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title> Exeter Orientation </title>
+  <title> Exeter Orientation App</title>
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="orientation.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,900&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-  <div class="container flex-container">
-    <div class="row">
-      <div class="col-md-12 offset-md-3">
-        <button onclick="window.location.href='studentLogin.html'" id="studentLogin"
-          class="btn btn-lg btn-secondary btn-block" type="submit">Student Login</button>
-      </div>
+  <div class="section">
+    <video autoplay loop muted>
+      <source src="backgroundvideo.mp4" type="video/mp4">
+    </video>
+
+    <div class="button-column">
+      <h1 class="title">Exeter Orientation App</h1>
+      <!--<button onclick="window.location.href='studentLogin.html'" id="studentLogin" class="btn btn-lg btn-secondary btn-block" type="submit">Student Login</button>-->
+      <button onclick="window.location.href='studentLogin.html'" id="studentLogin" class="loginButton" type="submit">Student Login  🎓</button>
+      <button onclick="window.location.href='gamekeeperLogin.html'" id="gamekeeperLogin" class="loginButton" type="submit">Gamekeeper Login  🎲</button>
     </div>
 
-    <div class="row">
-      <div class="col-md-12 offset-md-3">
-        <button onclick="window.location.href='gamekeeperLogin.html'" id="gamekeeperLogin"
-          class="btn btn-lg btn-secondary btn-block" type="submit">Gamekeeper Login</button>
-      </div>
-    </div>
+  </div> 
   </div>
+
+
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
-
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
-  <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-app.js"></script>
-
-  <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-
-  <script>
-    // Your web app's Firebase configuration
-    var firebaseConfig = {
-      apiKey: "AIzaSyA38bRGCRCA5d58dRpjbg56iDEwXmvoT8s",
-      authDomain: "groupsoftware-25ee9.firebaseapp.com",
-      databaseURL: "https://groupsoftware-25ee9.firebaseio.com",
-      projectId: "groupsoftware-25ee9",
-      storageBucket: "groupsoftware-25ee9.appspot.com",
-      messagingSenderId: "1031394181045",
-      appId: "1:1031394181045:web:1de897f3b3aa98d89b23fc"
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-  </script>
-
-
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 </body>
 
