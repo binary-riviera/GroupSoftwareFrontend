@@ -75,7 +75,10 @@ emo4.addEventListener('click', e => {
   var name = localStorage.getItem("studentName");
   var len = parseInt(localStorage.getItem("lengthFeed"));
 
+
+
   firebase.database().ref().child('feed').update({
+
       [len]:"Player " + name + " : " +"👍"
   });
   console.log('real time database updated with emoji');
