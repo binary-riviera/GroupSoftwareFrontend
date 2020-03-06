@@ -108,7 +108,7 @@ main>.container {
 
 .tableFixHead {
   overflow-y: auto;
-  height: 500px;
+  height: 200px;
 }
 
 .tableFixHead thead th {

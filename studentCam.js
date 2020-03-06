@@ -1,3 +1,7 @@
+
+
+
+
 var current = 0;
 document.getElementById('waypointNumber').innerText = current;
 

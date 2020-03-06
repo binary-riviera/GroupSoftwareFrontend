@@ -18,6 +18,7 @@ feedValues.on('child_added', function(snapshot) {
   tr.innerHTML = value ;
 
   if (lengthFeed == 1){
+    tr.innerHTML = "Most recently joined " + value ;
     list.appendChild(tr);   // Append <li> to <ul> with id="myList"
   }
   else if(lengthFeed == 2){
