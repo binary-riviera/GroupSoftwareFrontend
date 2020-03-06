@@ -3,7 +3,8 @@ body {
 }
 
 button {
-  margin-bottom: 100px margin: 0 auto;
+  margin-bottom: 100px; 
+  margin: 0 auto;
 }
 
 /* Centres a column */
@@ -85,11 +86,13 @@ main>.container {
   font-weight: 900;
   color: white;
   font-size: 6vw;
+  animation: fade-in 2500ms ease-out forwards;
 }
 
 .loginButton {
   display: inline-block;
-  width: 250px;
+  padding-left: 24px;
+  padding-right: 24px;
   height: 50px;
   background-color: #fff;
   color: rgb(4, 204, 4);
@@ -100,6 +103,8 @@ main>.container {
   border-style: none;
   margin: 10px;
   border-radius: 5px;
+  box-shadow: 0px 5px 8px rgba(50,184,59,0.5);
+  animation: fade-in 2500ms ease-out forwards;
   box-shadow: 0px 5px 8px rgba(50, 184, 59, 0.5);
 }
 
@@ -126,4 +131,18 @@ th, td {
 
 th {
   background: #eee;
+}
+
+.loginButton:hover{
+  background-color: lightgreen;
+  color: white;
+}
+
+@keyframes fade-in{
+  0%{
+    opacity: 0%;
+  }
+  100%{
+    opacity: 100%;
+  }
 }

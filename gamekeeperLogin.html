@@ -21,8 +21,6 @@
 </head>
 
 <body>
-  <button onclick="window.location.href='introPage.html'">Back</button>
-
   <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-firestore.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-auth.js"></script>
@@ -39,47 +37,42 @@
     firebase.initializeApp(firebaseConfig);
   </script>
 
+<div class="section">
+  <video autoplay loop muted>
+    <source src="backgroundvideo.mp4" type="video/mp4">
+  </video>
+
+  <button class="back-button" onclick="window.location.href='introPage.html'">Back</button>
+
   <main class="login-form">
     <div class="cotainer flex-container">
       <div class="row justify-content-center">
         <div class="col">
-          <h1 id="pgHeader"> Gamekeeper Login </h1>
+          <h1 id="pgHeader"> Gamekeeper Login 🎲</h1>
           <div class="cards">
             <div class="card-body">
 
 
               <div class="form-group row">
-                <h2 for="password" class="col-md-8 col-form-label offset-md-3">Exeter Emial</h2>
+                <h2 for="password" class="field-title">Exeter Email</h2>
               </div>
 
-              <div class="form-group row">
-                <div class="col-md-8 offset-md-3">
                   <input type="email" id="email_address" class="form-control" name="email-address" required>
-                </div>
-              </div>
+
 
               <div class="form-group row">
-                <h2 for="password" class="col-md-8 col-form-label offset-md-3">Password</h2>
+                <h2 for="password" class="field-title">Password</h2>
               </div>
 
-              <div class="form-group row">
-
-                <div class="col-md-8 offset-md-3">
                   <input type="password" id="password" class="form-control" name="password" required>
-                </div>
-              </div>
 
 
-              <div class="form-group row">
-                <h2 for="key" class="col-md-8 col-form-label offset-md-3">Key</h2>
-              </div>
 
               <div class="form-group row">
-
-                <div class="col-md-8 offset-md-3">
+                <h2 for="key" class="field-title">Key</h2>
+              </div>
                   <input type="password" id="key" class="form-control" name="key" required>
-                </div>
-              </div>
+
 
               <div class="form-group row">
                 <div class="col-md-6 offset-md-4">
@@ -106,6 +99,7 @@
     </div>
 
   </main>
+</div>
   <script src="AuthenticationKeeper.js"></script>
 
 
