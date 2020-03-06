@@ -23,7 +23,7 @@ firebase.database().ref('players/' + userName).set({
 });
 
 
-var name = localStorage.getItem("studentName")
+var name = localStorage.getItem("studentName");
 var len = localStorage.getItem("lengthFeed");
 console.log(len);
 firebase.database().ref().child('feed').update({

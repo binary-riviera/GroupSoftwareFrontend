@@ -126,16 +126,19 @@
           </tr>
         </tbody>
       </table>
-      <h5 class="card-title">Feed</h5>
-      <ul class="list-group">
-        <li class="list-group-item list-group-item-success">"Neptunes" Has 5/5</li>
-        <li class="list-group-item list-group-item-danger">"E Street Has 5/5</li>
-        <li class="list-group-item list-group-item-success">"Pharcyde" 5/5</li>
-        <li class="list-group-item list-group-item-warning">"Losers" have left the game</li>
-        <li class="list-group-item list-group-item-warning">"Spooners" have left the game</li>
-        <li class="list-group-item list-group-item-warning">"Losers 2" have left the game</li>
-        <li class="list-group-item list-group-item-warning">"Losers 3" have left the game</li>
-      </ul>
+
+      <h2 class="card-title">Feed</h2>
+
+      <div class="tableFixHead">
+        <table>
+          <thead>
+
+          </thead>
+          <tbody id = "feed">
+
+          </tbody>
+        </table>
+      </div>
       <button id="exitGame" class="btn btn-sm btn-danger">Log out</button>
       <script src="logOut.js"></script>
       <a href="#" onclick="gameStateEnd()" class="btn btn-warning" style="margin-top: 20px;">Start Game</a>
@@ -177,5 +180,6 @@
     });
   </script>
 </body>
+<script src="feed.js"></script>
 
 </html>

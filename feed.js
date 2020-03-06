@@ -17,5 +17,17 @@ feedValues.on('child_added', function(snapshot) {
   var tr = document.createElement('tr');
   tr.innerHTML = value ;
 
-  list.appendChild(tr);   // Append <li> to <ul> with id="myList"
+  if (lengthFeed == 1){
+    list.appendChild(tr);   // Append <li> to <ul> with id="myList"
+  }
+  else if(lengthFeed == 2){
+    list.insertBefore(tr,list.childNodes[0]);   // Append <li> to <ul> with id="myList"
+  }else{
+    list.insertBefore(tr,list.lastChild);   // Append <li> to <ul> with id="myList"
+  }
+  var myDiv = document.getElementById("scrollTable");
+
+  myDiv.scrollTop = myDiv.scrollHeight;
+
+
 });
