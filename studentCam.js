@@ -1,3 +1,7 @@
+
+
+
+
 var current = 0;
 document.getElementById('waypointNumber').innerText = current;
 
@@ -14,7 +18,7 @@ db.collection('Routes').get().then((snapshot) => {
   var ran = Math.floor(Math.random() * count);
   currentRoute = routeIDs[ran];
   var col = db.collection('Routes').doc(currentRoute).get();
-  localStorage.setItem("col", col);
+  localStorage.setItem("currentRoute", currentRoute);
 
   //get id of first location
   col.then(function(doc) {
@@ -36,8 +40,9 @@ function updateClue(result) {
 
   var ran = Math.floor(Math.random() * 11);
 
-  localStorage.getItem('col');
-
+  var currentRoute = localStorage.getItem('currentRoute');
+  var col = db.collection('Routes').doc(currentRoute).get();
+  console.log(col);
   //get current id
   col.then(function(doc) {
     if (doc.exists) {
@@ -46,6 +51,14 @@ function updateClue(result) {
       if (result == id) {
         const clue = document.getElementById('clue');
         current = current + 1;
+        var name = localStorage.getItem("studentName");
+        var len = parseInt(localStorage.getItem("lengthFeed"));
+
+        console.log(emo4.innerHtml);
+        firebase.database().ref().child('feed').update({
+            [len]:"Player " + name + " : " +"👍"
+        });
+        console.log('real time database updated with clue');
         db.collection('Locations').get().then((snapshot) => {
           snapshot.docs.forEach(doc => {
             var id = loc[current].id.replace(/\s/g, '');
