@@ -54,9 +54,8 @@ function updateClue(result) {
         var name = localStorage.getItem("studentName");
         var len = parseInt(localStorage.getItem("lengthFeed"));
 
-        console.log(emo4.innerHtml);
         firebase.database().ref().child('feed').update({
-            [len]:"Player " + name + " : " +"👍"
+            [len]:"Player " + name + " : found clue " +current +" 👍"
         });
         console.log('real time database updated with clue');
         db.collection('Locations').get().then((snapshot) => {
