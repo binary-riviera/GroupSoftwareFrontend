@@ -51,6 +51,14 @@ function updateClue(result) {
       if (result == id) {
         const clue = document.getElementById('clue');
         current = current + 1;
+        var name = localStorage.getItem("studentName");
+        var len = parseInt(localStorage.getItem("lengthFeed"));
+
+        console.log(emo4.innerHtml);
+        firebase.database().ref().child('feed').update({
+            [len]:"Player " + name + " : " +"👍"
+        });
+        console.log('real time database updated with clue');
         db.collection('Locations').get().then((snapshot) => {
           snapshot.docs.forEach(doc => {
             var id = loc[current].id.replace(/\s/g, '');
