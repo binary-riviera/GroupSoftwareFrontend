@@ -25,7 +25,7 @@ which they will have open while doing the orienteering.">
   <script src="fireConfig.js"></script>
 
 </head>
-<body>
+<body style ="background: #222;">
 
 
   <!-- student Alerts -->
@@ -33,39 +33,42 @@ which they will have open while doing the orienteering.">
   <script src="studentScreen.js"></script>
 
 
-  <button id="exitGame" class="btn btn-sm btn-danger">Exit Game</button>
+  <button id="exitGame" class="btn btn-sm btn-danger"style = "margin-bottom: 10px;text-align:center" >Exit Game</button>
   <script src="logOut.js"></script>
 
-  <div class="container">
+  <div class="container" style ="background: #222;">
 
 
-    <p>Lang: <span id="lang"></span></p>
-    <p>Long: <span id="long"></span></p>
+
 
     <main class="game">
 
-        <div class="container">
-          <h6 id="gameCondition" class="align-top">Waiting for players</h6>
-          <div style="clear: both">
-            <h4 style="float: left" id="waypointNumber">...</h4>
-            <h4 style="float: left">/5 waypoints reached </h4>
-          </div>
-          <hr />
-        </div>
 
-      <div class="container clue">
-        <h3 id="clue"> ...</h3>
+
+          <div style="clear: both;text-align:center">
+
+            <h4 style="float: left;margin-left: 20px;" id="waypointNumber">...</h4>
+            <h4 style="float: left">/5 waypoints reached </h4>
+
+          </div>
+
+
+
+      <div class="container clue" style = "margin-bottom: 10px;">
+        <h5 > Clue:</53>
+        <h5 id="clue"> ...</h5>
+        <h6 id="gameCondition" style = "margin-bottom: 10px;">Waiting for players</h6>
 
 
       </div>
 
 
-      <div class="container">
+      <div class="container" style="padding-top:20px;">
         <div class="row camera justify-content-center">
 
 
 
-          <button onclick="openCamera()" class="btn btn-sm btn-primary" type="submit">Open Camera</button>
+          <button onclick="openCamera()" class="btn btn-sm btn-primary" style="padding: 10px 10px 10px 10px;margin-bottom: 10px" type="submit">Open Camera</button>
 
         </div>
 
@@ -82,36 +85,39 @@ which they will have open while doing the orienteering.">
         </div>
 
       </div>
-      <h5 class="card-title">Feed</h5>
+      <h5 class="card-title" style= "color:white ;">Feed</h5>
 
-      <div class="tableFixHead" id= "scrollTable">
-        <table>
+      <div class="tableFixHead" id= "scrollTable" style= "color:white ;">
+        <table style= "color:white ;">
           <thead>
 
           </thead>
-          <tbody id = "feed">
+          <tbody id = "feed" style= "color:white ;">
 
           </tbody>
         </table>
       </div>
-  </div>
+
+      <div class="btn-group">
+      <button id="emo" class="btn btn-lg btn-secondary btn-block ">🗿</button>
+      </div>
+      <div class="btn-group offset-md-1">
+      <button id="emo1" class="btn btn-lg btn-secondary btn-block ">😢</button>
+      </div>
+      <div class="btn-group offset-md-1">
+      <button id="emo2" class="btn btn-lg btn-secondary btn-block ">👀</button>
+      </div>
+      <div class="btn-group offset-md-1">
+      <button id="emo3" class="btn btn-lg btn-secondary btn-block ">👎</button>
+      </div>
+      <div class="btn-group offset-md-1" >
+      <button id="emo4" class="btn btn-lg btn-secondary btn-block ">👍</button>
+      </div>
+
 
   </main>
 
-  <div class="btn-group offset-md-1">
-  <button id="emo" class="btn btn-lg btn-secondary btn-block ">🗿</button>
-  </div>
-  <div class="btn-group offset-md-1">
-  <button id="emo1" class="btn btn-lg btn-secondary btn-block ">😢</button>
-  </div>
-  <div class="btn-group offset-md-1">
-  <button id="emo2" class="btn btn-lg btn-secondary btn-block ">👀</button>
-  </div>
-  <div class="btn-group offset-md-1">
-  <button id="emo3" class="btn btn-lg btn-secondary btn-block ">👎</button>
-  </div>
-  <div class="btn-group offset-md-1">
-  <button id="emo4" class="btn btn-lg btn-secondary btn-block ">👍</button>
+
   </div>
 
 
