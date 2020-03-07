@@ -1,32 +1,36 @@
+var database = firebase.database();
+
 
 name = localStorage.getItem("studentName");
+console.log("IN HERE WITH + "+name);
 
-
+var gameCond;
 
 var starCountRef = firebase.database().ref('gameCondition');
-
-starCountRef.on('value', function(snapshot) {
+starCountRef.on('value', function (snapshot) {
   gameCond = snapshot.val();
+  /* If the user is still playing and a new game starts
+    they are re-added to the firebase
+  */
+  if (gameCond == "Start"){
+    coords = {lat:0,lng:0};
+    firebase.database().ref('players/'+name).set({
+    clues : 0,
+    playerName: name,
+    playerCoordinates: coords,
+    playerLocation:"FORUM",
+        playerRoute:"Forum-Ram-Harrison",
+    });
+  }
 });
 
-coords = {
-  lat: 0,
-  lng: 0
-}
-var userName = name.replace('@exeter.ac.uk', '')
-firebase.database().ref('players/' + userName).set({
-  clues: 0,
-  playerName: name,
-  playerCoordinates: coords,
-  playerLocation: "FORUM",
-  playerRoute: "Forum-Ram-Harrison",
-});
 
-
-var name = localStorage.getItem("studentName");
-var len = localStorage.getItem("lengthFeed");
-console.log(len);
-firebase.database().ref().child('feed').update({
-    [len]:"Player " + name + " has joined the game"
-});
-console.log('real time database updated with login');
+// Adds a player to firebase when they initial join
+coords = {lat:0,lng:0};
+firebase.database().ref('players/'+name).set({
+    clues : 0,
+    playerName: name,
+    playerCoordinates: coords,
+    playerLocation:"FORUM",
+    playerRoute:"Forum-Ram-Harrison",
+  });

@@ -18,17 +18,32 @@ var details = ['playerCoordinates', 'playerName']
  * @param {type} var Description.
  * @return {type} Return value description.
  */
+
+
+
 function gameStateChange() {
+  gameCond = document.getElementById('gameButton');
+  if(gameCond.innerText == 'End Game'){
+    // Clearing firebase
+    gameCond.innerText = 'Start Game';
+    firebase.database().ref("gameCondition").set('End');
+    // Remove all users from firebase when a game ends
+    var gameState = firebase.database().ref("players"); //root reference to your data
+    gameState.once('value').then(function(snapshot) {
+      snapshot.forEach(function(childSnapshot) {
+      //remove each child
+        gameState.child(childSnapshot.key).remove();
+      });
+    });
 
-  document.location.href = 'gamekeeperEnd.html';
-  firebase.database().ref("gameCondition").set('End');
+  } else if (gameCond.innerText == 'Start Game'){
+    gameCond.innerText = 'End Game';
+    firebase.database().ref("gameCondition").set('Start');
+  }
 }
 
-function gameStateEnd() {
 
-  document.location.href = 'gamekeeper.html';
-  firebase.database().ref("gameCondition").set('Start');
-}
+
 
 let players = [];
 
@@ -152,13 +167,27 @@ function addMarker(props, map) {
 }
 
 
+function getAlerts(){
+  
+
 //Getting alerts from students
-var name;
-// WHat table to get from
-var starCountRef = firebase.database().ref('alert');
-// Gets the valuei
-starCountRef.on('child_added', function(snapshot) {
-  let name = snapshot.val();
-  alert("PLAYER " + name.playerName + " NEEDS HELP");
-  // ADD SOMETHING TO BRING UP THE PLAYER BOX
-});
+  var name;
+  // WHat table to get from
+  var starCountRef = firebase.database().ref('alert');
+  // Gets the valuei
+  starCountRef.on('child_added', function(snapshot) {
+
+    let name = snapshot.val();
+
+    alert("PLAYER " + name.playerName + " NEEDS HELP");
+  });
+
+
+  // Removes the alert once its been shown
+  var alertRef = firebase.database().ref('alert');
+
+  alertRef.on('child_added', function(snapshot) {
+      snapshot.ref.remove();
+  });
+}
+getAlerts();
