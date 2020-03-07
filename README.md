@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <a href="https://github.com/binary-riviera/GroupSoftwareFrontend"><img src="https://imgur.com/a/e2V9HZk" alt="Exeter Orientation" width="200"></a>
+  <a href="https://github.com/binary-riviera/GroupSoftwareFrontend"><img src="https://i.imgur.com/JYXOrqU.png" alt="Exeter Orientation" width="400"></a>
   <br>
   Software Engineering Group Project
   <br>
@@ -127,9 +127,23 @@ Example
 4. Ready to conduct the game!
 
 ## Usage
-* Pictures
 
-## Sitemap
+### Sitemap
+
+<br>
+  <a href="https://binary-riviera.github.io/GroupSoftwareFrontend/introPage.html"><img src="https://i.imgur.com/6JxdYiJ.png" alt="Sitemap" width="400"></a>
+  <br>
+
+
+
+**Student** :mortar_board:
+
+
+
+**Gamekeeper** :game_die:
+
+
+
 
 ## Authors
 
