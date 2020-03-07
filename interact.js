@@ -1,7 +1,3 @@
-
-
-
-
 const emo = document.getElementById('emo');
 
 
