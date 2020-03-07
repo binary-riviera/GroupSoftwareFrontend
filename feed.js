@@ -1,4 +1,11 @@
-
+/**
+ * A JavaScript file for the feed
+ *
+ *
+ *
+ * @author Louis Evans
+ * @since  20/2/2020
+ */
 var feedValues = firebase.database().ref('feed');
 var arrVal = [];
 
@@ -10,7 +17,6 @@ feedValues.on('child_added', function(snapshot) {
   //set feedValues
   var lengthFeed = arrVal.length;
   localStorage.setItem("lengthFeed", lengthFeed);
-
 
   var list = document.getElementById('feed');
 

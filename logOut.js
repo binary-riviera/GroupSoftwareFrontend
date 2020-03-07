@@ -1,10 +1,13 @@
-
-
-
-
-
+/**
+ * A JavaScript file to handle log outs during the game
+ *
+ *
+ *
+ * @author Louis Evans. 
+ * @since  20/2/2020
+ */
 const out = document.getElementById("exitGame");
-
+// Handle when user attempts to leave the game
 out.addEventListener('click', e => {
   console.log('logging out')
   firebase.auth().signOut().then(function() {
@@ -25,7 +28,7 @@ out.addEventListener('click', e => {
 
 
   });
-
+	// check user is logged in
   firebase.auth().onAuthStateChanged(firebaseUser => {
     if (firebaseUser) {
 

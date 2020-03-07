@@ -1,3 +1,11 @@
+/**
+ * A JavaScript file to connect to firebase
+ *
+ *
+ *
+ * @author Connor Forsyth, Richard Li. 
+ * @since  20/2/2020
+ */
 const firebaseConfig = {
   apiKey: "AIzaSyA38bRGCRCA5d58dRpjbg56iDEwXmvoT8s",
   authDomain: "groupsoftware-25ee9.firebaseapp.com",
@@ -18,7 +26,7 @@ firebase.firestore().settings({
   cacheSizeBytes: firebase.firestore.CACHE_SIZE_UNLIMITED
 });
 
-
+// check user is logged in
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     console.log("logged in");

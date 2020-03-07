@@ -1,10 +1,14 @@
-
-
-
+/**
+ * A JavaScript file to handle interaction from the user during the game and update the feed
+ *
+ *
+ *
+ * @author Louis Evans. 
+ * @since  20/2/2020
+ */
 
 const emo = document.getElementById('emo');
-
-
+// handle different input from the user
 emo.addEventListener('click', e => {
   var name = localStorage.getItem("studentName");
   var len = localStorage.getItem("lengthFeed");
@@ -50,7 +54,6 @@ emo2.addEventListener('click', e => {
 });
 
 
-
 const emo3 = document.getElementById('emo3');
 
 
@@ -65,7 +68,6 @@ emo3.addEventListener('click', e => {
 
 
 });
-
 
 
 const emo4 = document.getElementById('emo4');
