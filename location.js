@@ -1,7 +1,7 @@
 // 4th decimal place
 // this is valid up to 11m
 var isAtLoc = function(curLang, curLong, locLang, locLong) {
-  if (curLang.toFixed(4) === locLang.toFixed(4) && curLong.toFixed(4) === locLong.toFixed()) {
+  if (curLang.toFixed(4) === locLang.toFixed(4) && curLong.toFixed(4) === locLong.toFixed(4)) {
     return true;
   }
   return false;
@@ -24,3 +24,5 @@ var updateStream = window.setInterval(() => {
     updateDatabase(x.coords.latitude, x.coords.longitude);
   });
 }, 30000)
+
+module.exports = isAtLoc;
