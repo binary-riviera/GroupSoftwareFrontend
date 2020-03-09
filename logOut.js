@@ -1,8 +1,3 @@
-
-
-
-
-
 const out = document.getElementById("exitGame");
 
 out.addEventListener('click', e => {
