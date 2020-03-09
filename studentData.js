@@ -52,40 +52,45 @@ function getPlayers(players) {
       })
 
       //printObj(players);
-    }).then(printObj(players))
-  })
+    })
+    printObj(players)
+  });
 }
 
 // Prints all the objetcs inside
 function printObj(players) {
   var list = document.getElementById('teams');
   var index = 0;
-  players.reverse();
+  
 
-  while (list.firstChild) {
-    list.removeChild(list.lastChild);
-  }
+  if (list !== null) {
+    players.reverse();
+    while (list.firstChild) {
+      list.removeChild(list.lastChild);
+    }
+  
 
 
 
-  for (let x in players) {
-    //Add to leaderboard
-    index = index + 1;
+    for (let x in players) {
+      //Add to leaderboard
+      index = index + 1;
 
-    var tr = document.createElement('tr');
-    tr.innerHTML = '<th scope="row">' + index + '</th><td>' + players[x].playerName + '</td><td>' + players[x].clues + '/5</td>';
+      var tr = document.createElement('tr');
+      tr.innerHTML = '<th scope="row">' + index + '</th><td>' + players[x].playerName + '</td><td>' + players[x].clues + '/5</td>';
 
-    list.appendChild(tr);
+      list.appendChild(tr);
 
-    //Add marker
-    addMarker({
-        coords: {
-          lat: players[x].playerCoordinates.lat,
-          lng: players[x].playerCoordinates.lng
+      //Add marker
+      addMarker({
+          coords: {
+            lat: players[x].playerCoordinates.lat,
+            lng: players[x].playerCoordinates.lng
+          },
+          content: players[x].playerName
         },
-        content: players[x].playerName
-      },
-      map);
+        map);
+    }
   }
 }
 
