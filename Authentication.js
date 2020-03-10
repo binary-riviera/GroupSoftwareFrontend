@@ -7,18 +7,20 @@
  * @since  20/2/2020
  */
 
-
+// get login data from form //
 const login = document.getElementById('login');
 const signUp = document.getElementById('signUp');
 
+// use firebase to create a new user in the database //
 function registerUser(email, password) {
   firebase.auth().createUserWithEmailAndPassword(email, password).then(function(value) {
+	// log all changes //
     console.log("signed up");
   }).catch(function(error) {
 
   });
 }
-
+// event listener to handle errors/correct formatting during login //
 login.addEventListener('click', e => {
 
 
@@ -41,7 +43,7 @@ login.addEventListener('click', e => {
 
 
 });
-
+// event listener to handle errors/correct formatting during register //
 signUp.addEventListener('click', e => {
 
   const emailTxt = document.getElementById('email_address');
@@ -62,6 +64,7 @@ signUp.addEventListener('click', e => {
 
 });
 
+// realtime listener to log user logins and redirect them accordinly //
 firebase.auth().onAuthStateChanged(firebaseUser => {
   if (firebaseUser) {
     console.log(firebaseUser);

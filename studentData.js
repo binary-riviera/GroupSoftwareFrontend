@@ -7,23 +7,19 @@
  * @since  20/2/2020
  */
 
-
-
 var details = ['playerCoordinates', 'playerName']
-
-//TODO: Comment functions (in the format described below)
-/**
- * Description here.
- *
- * @param {type} var Description.
- * @return {type} Return value description.
+ 
+ /**
+ * check for game state change.
  */
 function gameStateChange() {
 
   document.location.href = 'gamekeeperEnd.html';
   firebase.database().ref("gameCondition").set('End');
 }
-
+/**
+ * Run when game ends.
+ */
 function gameStateEnd() {
 
   document.location.href = 'gamekeeper.html';
@@ -31,7 +27,12 @@ function gameStateEnd() {
 }
 
 let players = [];
-
+/**
+ * Creates an object for each player in the game.
+ *
+ * @param players Empty array of players.
+ * @return Returns an array of objects which are players.
+ */
 function getPlayers(players) {
   // goes in the players tree
   const query = firebase.database().ref("players")
@@ -55,8 +56,14 @@ function getPlayers(players) {
     }).then(printObj(players))
   })
 }
-
-// Prints all the objetcs inside
+/**
+ * Prints all objecs in the given array players.
+ * Also adds each player the leaderboard.
+ *
+ * @param players Array of objects/players in the game.
+ * @return Prints each object in the array.
+ */
+// Prints all the objects inside
 function printObj(players) {
   var list = document.getElementById('teams');
   var index = 0;
@@ -65,8 +72,6 @@ function printObj(players) {
   while (list.firstChild) {
     list.removeChild(list.lastChild);
   }
-
-
 
   for (let x in players) {
     //Add to leaderboard
@@ -90,10 +95,14 @@ function printObj(players) {
 }
 
 
-
 initMap();
 var map;
-
+/**
+ * Create the map within the set location.
+ *
+ * 
+ * @return Returns the map.
+ */
 function initMap() {
   console.log("initialising map...");
   // Map settings
@@ -113,7 +122,14 @@ function initMap() {
 
 var allMarkers = [];
 
-// ADD new Marker
+
+/**
+ * Add a players location on the map using a marker.
+ *
+ * @param props Information containing the players coordinates and player name.
+ * @param map The map to map the player on.
+ * @return Returns a map with each player marked on.
+ */
 function addMarker(props, map) {
 
   for (let x in allMarkers) {
@@ -122,7 +138,6 @@ function addMarker(props, map) {
       allMarkers[x].setMap(null);
     }
   }
-
 
   var marker = new google.maps.Marker({
     position: props.coords,

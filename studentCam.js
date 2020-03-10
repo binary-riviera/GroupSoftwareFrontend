@@ -1,6 +1,11 @@
-
-
-
+/**
+ * A JavaScript file to update the game with the clue found using the QR reader/camera on a phone
+ *
+ *
+ *
+ * @author Louis Evans, Mbongeni Gulu. 
+ * @since  20/2/2020
+ */
 
 var current = 0;
 document.getElementById('waypointNumber').innerText = current;
@@ -34,9 +39,13 @@ db.collection('Routes').get().then((snapshot) => {
   });
 });
 
-
+/**
+ * Update the database with the clue found using the QR code and generates the next waypoint (clue) to be found.
+ *
+ * @param {String} result Identifier for the current waypoint found from the QR scanner.
+ * @return Returns an alert, updates the database/log with the found waypoint.
+ */
 function updateClue(result) {
-
 
   var ran = Math.floor(Math.random() * 11);
 
@@ -82,7 +91,13 @@ function updateClue(result) {
   //document.location.href = "studentGame.html";
 
 }
-// QR CODE READER
+
+/**
+ * QR code reader that uses the user's phone camera.
+ *
+ * 
+ * @return Returns the text from the scanner.
+ */
 function openCamera() {
   let scanner = null;
   Dynamsoft.BarcodeScanner.createInstance({

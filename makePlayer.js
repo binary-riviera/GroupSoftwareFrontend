@@ -1,7 +1,12 @@
-
+/**
+ * A JavaScript file to create a player in the game with starting location as the forum
+ *
+ *
+ *
+ * @author Daniel Cripps. 
+ * @since  20/2/2020
+ */
 name = localStorage.getItem("studentName");
-
-
 
 var starCountRef = firebase.database().ref('gameCondition');
 
