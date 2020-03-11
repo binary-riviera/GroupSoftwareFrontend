@@ -3,7 +3,7 @@
  *
  *
  *
- * @author Daniel Cripps. 
+ * @author Daniel Cripps.
  * @since  20/2/2020
  */
 // 4th decimal place
@@ -35,8 +35,7 @@ var updateDatabase = function(lat, long) {
 
 var updateStream = window.setInterval(() => {
   navigator.geolocation.getCurrentPosition(x => {
-    document.getElementById('lang').innerHTML = x.coords.latitude;
-    document.getElementById('long').innerHTML = x.coords.longitude;
+
     updateDatabase(x.coords.latitude, x.coords.longitude);
   });
 }, 30000)
