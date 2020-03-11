@@ -6,6 +6,7 @@
  * @author Daniel Cripps. 
  * @since  20/2/2020
  */
+
 name = localStorage.getItem("studentName");
 
 var starCountRef = firebase.database().ref('gameCondition');
