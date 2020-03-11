@@ -7,6 +7,7 @@
  * @since  20/2/2020
  */
 
+
 const emo = document.getElementById('emo');
 // handle different input from the user
 emo.addEventListener('click', e => {
