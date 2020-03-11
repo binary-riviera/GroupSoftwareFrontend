@@ -7,24 +7,56 @@
  * @since  20/2/2020
  */
 
-var details = ['playerCoordinates', 'playerName']
- 
+var details = ['playerCoordinates', 'playerName'];
+
  /**
  * check for game state change.
  */
-function gameStateChange() {
+ function gameStateChange() {
+   gameCond = document.getElementById('gameButton');
+   if(gameCond.innerText == 'End Game'){
+     // Clearing firebase
+     gameCond.innerText = 'Start Game';
+     firebase.database().ref("gameCondition").set('End');
+     // Remove all users from firebase when a game ends
+     var gameState = firebase.database().ref("players"); //root reference to your data
+     gameState.once('value').then(function(snapshot) {
+       snapshot.forEach(function(childSnapshot) {
+       //remove each child
+         gameState.child(childSnapshot.key).remove();
+       });
+     });
+   } else if (gameCond.innerText == 'Start Game'){
+  gameCond.innerText = 'End Game';
 
-  document.location.href = 'gamekeeperEnd.html';
-  firebase.database().ref("gameCondition").set('End');
-}
-/**
- * Run when game ends.
- */
-function gameStateEnd() {
-
-  document.location.href = 'gamekeeper.html';
   firebase.database().ref("gameCondition").set('Start');
+  }
 }
+
+function getAlerts(){
+  var name;
+  // WHat table to get from
+  var starCountRef = firebase.database().ref('alert');
+  // Gets the valuei
+  starCountRef.on('child_added', function(snapshot) {
+
+    let name = snapshot.val();
+
+    alert("PLAYER " + name.playerName + " NEEDS HELP");
+  });
+
+
+  // Removes the alert once its been shown
+  var alertRef = firebase.database().ref('alert');
+
+  alertRef.on('child_added', function(snapshot) {
+      snapshot.ref.remove();
+  });
+}
+
+getAlerts();
+
+
 
 let players = [];
 /**
@@ -53,8 +85,9 @@ function getPlayers(players) {
       })
 
       //printObj(players);
-    }).then(printObj(players))
-  })
+    })
+    printObj(players)
+  });
 }
 /**
  * Prints all objecs in the given array players.
@@ -67,30 +100,34 @@ function getPlayers(players) {
 function printObj(players) {
   var list = document.getElementById('teams');
   var index = 0;
-  players.reverse();
 
-  while (list.firstChild) {
-    list.removeChild(list.lastChild);
-  }
 
-  for (let x in players) {
-    //Add to leaderboard
-    index = index + 1;
+  if (list !== null) {
+    players.reverse();
+    while (list.firstChild) {
+      list.removeChild(list.lastChild);
+    }
 
-    var tr = document.createElement('tr');
-    tr.innerHTML = '<th scope="row">' + index + '</th><td>' + players[x].playerName + '</td><td>' + players[x].clues + '/5</td>';
 
-    list.appendChild(tr);
+    for (let x in players) {
+      //Add to leaderboard
+      index = index + 1;
 
-    //Add marker
-    addMarker({
-        coords: {
-          lat: players[x].playerCoordinates.lat,
-          lng: players[x].playerCoordinates.lng
+      var tr = document.createElement('tr');
+      tr.innerHTML = '<th scope="row">' + index + '</th><td>' + players[x].playerName + '</td><td>' + players[x].clues + '/5</td>';
+
+      list.appendChild(tr);
+
+      //Add marker
+      addMarker({
+          coords: {
+            lat: players[x].playerCoordinates.lat,
+            lng: players[x].playerCoordinates.lng
+          },
+          content: players[x].playerName
         },
-        content: players[x].playerName
-      },
-      map);
+        map);
+    }
   }
 }
 
@@ -100,7 +137,7 @@ var map;
 /**
  * Create the map within the set location.
  *
- * 
+ *
  * @return Returns the map.
  */
 function initMap() {

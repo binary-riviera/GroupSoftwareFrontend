@@ -3,7 +3,7 @@
  *
  *
  *
- * @author Louis Evans
+ * @author Connor_Forsyth
  * @since  20/2/2020
  */
 var feedValues = firebase.database().ref('feed');
@@ -24,7 +24,7 @@ feedValues.on('child_added', function(snapshot) {
   tr.innerHTML = value ;
 
   if (lengthFeed == 1){
-    tr.innerHTML = "Most recently joined " + value ;
+    //tr.innerHTML = "Most recently joined " + value ;
     list.appendChild(tr);   // Append <li> to <ul> with id="myList"
   }
   else if(lengthFeed == 2){

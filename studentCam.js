@@ -3,7 +3,7 @@
  *
  *
  *
- * @author Louis Evans, Mbongeni Gulu. 
+ * @author Connor_Forsyth, Mbongeni Gulu.
  * @since  20/2/2020
  */
 
@@ -63,9 +63,19 @@ function updateClue(result) {
         var name = localStorage.getItem("studentName");
         var len = parseInt(localStorage.getItem("lengthFeed"));
 
+        if(current==5){
+          alert("You have won the game")
+          firebase.database().ref().child('feed').update({
+              [len]:"Player " + name + " : has found all waypoints 👍"
+          });
+
+
+      }else{
         firebase.database().ref().child('feed').update({
             [len]:"Player " + name + " : found clue " +current +" 👍"
         });
+      }
+
         console.log('real time database updated with clue');
         db.collection('Locations').get().then((snapshot) => {
           snapshot.docs.forEach(doc => {
@@ -95,7 +105,7 @@ function updateClue(result) {
 /**
  * QR code reader that uses the user's phone camera.
  *
- * 
+ *
  * @return Returns the text from the scanner.
  */
 function openCamera() {

@@ -29,7 +29,7 @@ login.addEventListener('click', e => {
 
   var email = emailTxt.value;
   var pass = passwordTxt.value;
-  var userName = email.replace('@exeter.ac.uk', '')
+  var userName = email.replace('@exeter.ac.uk', '');
   localStorage.setItem("studentName", userName);
   firebase.auth().signInWithEmailAndPassword(email, pass)
     .catch(function(error) {
@@ -55,7 +55,7 @@ signUp.addEventListener('click', e => {
 
 
   //verification for exeter email
-  var substring = "exeter.ac.uk"
+  var substring = "exeter.ac.uk";
   if (email.includes(substring)) {
     registerUser(email, pass);
   } else {
@@ -71,6 +71,6 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
 
     document.location.href = "studentGame.html";
   } else {
-    console.log('not logged in')
+    console.log('not logged in');
   }
 });
