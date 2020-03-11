@@ -33,8 +33,14 @@ login.addEventListener('click', e => {
   localStorage.setItem("studentName", userName);
   firebase.database().ref('players/'+userName).equalTo(userName).once("value", snapshot => {
    if (snapshot.exists()){
-      console.log("exists!");
+      var current = snapshot.clues;
+      localStorage.setItem("current", current);
+      console.log(current);
+
     } else {
+      var current = 0;
+      localStorage.setItem("current", current);
+      console.log(current);
       coords = {lat:0,lng:0};
       firebase.database().ref('players/'+userName).set({
       clues : 0,

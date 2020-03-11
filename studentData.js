@@ -19,7 +19,7 @@ var details = ['playerCoordinates', 'playerName'];
      gameCond.innerText = 'Start Game';
      firebase.database().ref("gameCondition").set('End');
      // Remove all users from firebase when a game ends
-     
+
    } else if (gameCond.innerText == 'Start Game'){
   gameCond.innerText = 'End Game';
 

@@ -23,16 +23,6 @@ starCountRef.on('value', function(snapshot) {
    they are re-added to the firebase
  */
 
- if (gameCond == "End"){
-   coords = {lat:0,lng:0};
-   firebase.database().ref('players/'+name).set({
-   clues : 0,
-   playerName: name,
-   playerCoordinates: coords,
-   playerLocation:"FORUM",
-       playerRoute:"Forum-Ram-Harrison",
-   });
- }
 
 /* Connors code Not sure what it does but its broken
 

@@ -7,7 +7,8 @@
  * @since  20/2/2020
  */
 
-var current = 0;
+var current = parseInt(localStorage.getItem("current"));
+console.log(current);
 document.getElementById('waypointNumber').innerText = current;
 
 // pick random route out of all Routes
@@ -60,6 +61,9 @@ function updateClue(result) {
       if (result == id) {
         const clue = document.getElementById('clue');
         current = current + 1;
+
+
+        localStorage.setItem("current",current);
         var name = localStorage.getItem("studentName");
         var len = parseInt(localStorage.getItem("lengthFeed"));
 
