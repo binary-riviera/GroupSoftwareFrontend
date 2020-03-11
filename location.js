@@ -40,3 +40,5 @@ var updateStream = window.setInterval(() => {
     updateDatabase(x.coords.latitude, x.coords.longitude);
   });
 }, 30000)
+
+module.exports = isAtLoc;

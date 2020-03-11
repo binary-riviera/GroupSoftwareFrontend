@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/binary-riviera/GroupSoftwareFrontend#readme",
   "devDependencies": {
-    "cypress": "^4.1.0"
+    "jest": "^24.9.0"
   }
 }
