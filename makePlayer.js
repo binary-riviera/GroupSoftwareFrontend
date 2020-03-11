@@ -22,7 +22,8 @@ starCountRef.on('value', function(snapshot) {
 /* If the user is still playing and a new game starts
    they are re-added to the firebase
  */
- if (gameCond == "Start"){
+
+ if (gameCond == "End"){
    coords = {lat:0,lng:0};
    firebase.database().ref('players/'+name).set({
    clues : 0,
@@ -32,18 +33,6 @@ starCountRef.on('value', function(snapshot) {
        playerRoute:"Forum-Ram-Harrison",
    });
  }
-
-
-// Adds a player to firebase when they initial join
-coords = {lat:0,lng:0};
-firebase.database().ref('players/'+name).set({
-    clues : 0,
-    playerName: name,
-    playerCoordinates: coords,
-    playerLocation:"FORUM",
-    playerRoute:"Forum-Ram-Harrison",
-  });
-
 
 /* Connors code Not sure what it does but its broken
 
