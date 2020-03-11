@@ -1,22 +1,8 @@
-.flex-container {
-  display: flex;
-  min-height: 100vh;
-  justify-content: center;
-  align-items: center;
-}
 
-#pgHeader {
-  text-align: center;
-  font-family: "Montserrat";
-  color: white;
-  font-weight: 900;
-}
-body {
-  font-family: monospace;
-}
 
 button {
-  margin-bottom: 100px margin: 0 auto;
+  margin-bottom: 100px; 
+  margin: 0 auto;
 }
 
 /* Centres a column */
@@ -28,7 +14,7 @@ button {
 .centered {
   float: none;
   /* or absolute */
-  top: 50%;
+  right: 50%;
   left: 50%;
   align-items: center;
 }
@@ -50,8 +36,41 @@ button {
 
 .clue {
   border-style: solid;
-  border-radius: 25px;
-  background: #C0C0C0;
+  border-radius: 10px;
+  border-width: 2px;
+  border-color: green;
+  background: lightgreen;
+  padding-top: 10px;
+  box-shadow: 0px 3px 5px 1px rgba(0,255,0,0.2);
+  color: darkgreen;
+}
+
+.waypoint{
+  padding-top: 10px;
+  width: 100%;
+}
+
+.waypoint-text{
+  float: left;
+  color: darkgreen;
+  font-size: medium;
+}
+
+.clue-text{
+  width:100%;
+  display: inline-block;
+  margin-top: 28px;
+}
+
+.clue-text-prompt{
+  position: absolute;
+  left: 32px;
+  margin-bottom: 20px;
+  font-size: medium;
+}
+
+#waypointNumber{
+  margin-left: 10px;
 }
 
 ul {
@@ -64,7 +83,7 @@ ul {
 }
 
 main>.container {
-  padding: 60px 15px 0;
+  padding: 0px 15px 0;
 }
 
 .section {
@@ -82,6 +101,7 @@ main>.container {
   align-content: center;
   align-self: center;
   z-index: 2;
+
   text-align: center;
 }
 
@@ -118,7 +138,7 @@ main>.container {
 
 .tableFixHead {
   overflow-y: auto;
-  height: 500px;
+  height: 200px;
 }
 
 .tableFixHead thead th {
@@ -131,18 +151,17 @@ table {
   border-collapse: collapse;
   width: 100%;
   margin-top: 0px;
+  padding: 100px 50px 75px 100px;
+
 }
 
 th, td {
-  padding: 8px 16px;
+  padding: 25px 50px 75px 100px;
 }
 
 th {
   background: #eee;
 }
-body {font-family: Arial, Helvetica, sans-serif;
-      background: #222;
-      margin:0;}
 
 /* Full-width input fields */
 input[type=text], input[type=password] {
@@ -171,20 +190,6 @@ p{
 .F{
   float:left;
 }
-/* Set a style for all buttons */
-button {
-  background-color: #000000;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-}
-
-button:hover {
-  opacity: 0.7;
-}
 
 label{
   color: white;
@@ -193,7 +198,33 @@ label{
   border: none;
 }
 
+.emoji-row{
+  width: 100%;
+  height: 100px;
+  display: inline-block;
+  text-align: center;
+}
 
+.emoji-button{
+  border-radius: 5px;
+  border-color: lightgreen;
+  background-color: white;
+  color: lightgreen;
+  width: 50px;
+  height: 50px;
+  border-style: solid;
+}
+
+.help-faq-buttons{
+  border-radius: 5px;
+  border-color: lightcoral;
+  background-color: white;
+  color: lightcoral;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 50px;
+  border-style: solid;
+}
 
 span.psw {
   float: right;
@@ -215,58 +246,21 @@ span.psw {
   padding-top: 60px;
 }
 
-/* Modal Content/Box */
-.login-content {
-  background-color: #fefefe;
-  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+.open-camera-button{
+  font-family: "Montserrat";
+  background-color: rgb(4, 204, 4);
+  color: white;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-style: none;
+  width: 90%;
 }
 
-/* Add Zoom Animation */
-.animate {
-  -webkit-animation: animatezoom 0.6s;
-  animation: animatezoom 0.6s
-}
-
-header{
-  background: #af2424;
-}
-header::after{
-  content: '';
-  display: table;
-  clear:both;
-
-}
-.nav{
-  width:40%;
-  float: right;
-}
-
-nav form{
-   display: inline-block;
-   margin-left: 50px;
-}
-
-
-
-@-webkit-keyframes animatezoom {
-  from {-webkit-transform: scale(0)}
-  to {-webkit-transform: scale(1)}
-}
-
-@keyframes animatezoom {
-  from {transform: scale(0)}
-  to {transform: scale(1)}
-}
-
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-  span.psw {
-     display: block;
-     float: none;
-  }
-  .cancelbtn {
-     width: 100%;
-  }
+.game{
+  background-color: white;
+  height: 100%;
 }
