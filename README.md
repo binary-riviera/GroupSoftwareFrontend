@@ -97,15 +97,28 @@ https://github.com/binary-riviera/GroupSoftwareFrontend.git
 
 ## Testing
 
-Explain how to run the automated tests for this system.
+### Testing remotely
 
-### Test1
+By default, the tests are run on every push to the repository. All the required functionality works out of the box. The results of the tests passing are displayed in the *actions* pane of the repository. If you want to change how the tests run, for instance running tests on pull requests instead of on push then the *.github/javascript.yml* needs to be edited.
 
-Hello
+### Testing locally
+
+To test locally first make sure to clone the repository. Then install Cypress (the testing tool used) by running:
 
 ```
-Example
+node install
 ```
+After this, tests can be run by running the following command in the home directory:
+
+On Linux
+```
+./node_modules/.bin/cypress run
+```
+On Windows
+```
+.\node_modules\.bin\cypress run
+```
+The tests will all be run then, displaying the passes and failures on the command line.
 
 ## Deployment
 

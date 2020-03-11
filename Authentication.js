@@ -31,7 +31,31 @@ login.addEventListener('click', e => {
   var pass = passwordTxt.value;
   var userName = email.replace('@exeter.ac.uk', '');
   localStorage.setItem("studentName", userName);
-  firebase.auth().signInWithEmailAndPassword(email, pass)
+  firebase.database().ref('players/'+userName).equalTo(userName).once("value", snapshot => {
+   if (snapshot.exists()){
+      var current = snapshot.clues;
+      localStorage.setItem("current", current);
+      console.log(current);
+
+    } else {
+      var current = 0;
+      localStorage.setItem("current", current);
+      console.log(current);
+      coords = {lat:0,lng:0};
+      firebase.database().ref('players/'+userName).set({
+      clues : 0,
+      playerName: name,
+      playerCoordinates: coords,
+      playerLocation:"FORUM",
+      playerRoute:"Forum-Ram-Harrison",
+      });
+    }
+  });
+
+
+
+
+    firebase.auth().signInWithEmailAndPassword(email, pass)
     .catch(function(error) {
       alert("Password or User Name are incorrect. Please Try Again");
 
