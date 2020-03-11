@@ -3,34 +3,49 @@
  *
  *
  *
- * @author Daniel Cripps. 
+ * @author Daniel Cripps.
  * @since  20/2/2020
  */
 
-name = localStorage.getItem("studentName");
-
+var database = firebase.database();
+var name = localStorage.getItem("studentName");
+var len = localStorage.getItem("lengthFeed");
+var gameCond;
+// Gets the game condition
 var starCountRef = firebase.database().ref('gameCondition');
-
 starCountRef.on('value', function(snapshot) {
   gameCond = snapshot.val();
 });
 
-coords = {
-  lat: 0,
-  lng: 0
-}
 
-var name = localStorage.getItem("studentName");
-var len = localStorage.getItem("lengthFeed");
-if (name!="null"){
-var userName = name.replace('@exeter.ac.uk', '')
-firebase.database().ref('players/' + userName).set({
-  clues: 0,
-  playerName: name,
-  playerCoordinates: coords,
-  playerLocation: "FORUM",
-  playerRoute: "Forum-Ram-Harrison",
-});
+
+/* If the user is still playing and a new game starts
+   they are re-added to the firebase
+ */
+ if (gameCond == "Start"){
+   coords = {lat:0,lng:0};
+   firebase.database().ref('players/'+name).set({
+   clues : 0,
+   playerName: name,
+   playerCoordinates: coords,
+   playerLocation:"FORUM",
+       playerRoute:"Forum-Ram-Harrison",
+   });
+ }
+
+
+// Adds a player to firebase when they initial join
+coords = {lat:0,lng:0};
+firebase.database().ref('players/'+name).set({
+    clues : 0,
+    playerName: name,
+    playerCoordinates: coords,
+    playerLocation:"FORUM",
+    playerRoute:"Forum-Ram-Harrison",
+  });
+
+
+/* Connors code Not sure what it does but its broken
 
 
 firebase.database().ref().child('feed').update({
@@ -44,5 +59,5 @@ firebase.database().ref().child('feed').update({
     [len]:"A " + name + " has joined the game"
 });
 console.log('real time database updated with login');
-
 }
+*/
