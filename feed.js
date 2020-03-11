@@ -38,3 +38,8 @@ feedValues.on('child_added', function(snapshot) {
 
 
 });
+
+feedValues.on('child_removed', function(snapshot) {
+  var list = document.getElementById('feed');
+  list.innerHTML = '';
+});
