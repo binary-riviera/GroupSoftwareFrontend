@@ -5,10 +5,14 @@
 and to change the game state of the game.">
 
 <head>
+  <!-- Required meta tags -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  
+  <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="gamekeeper.css">
+  
   <title>Game Keeper Game</title>
 </head>
 
@@ -28,7 +32,9 @@ and to change the game state of the game.">
 
 
   <div class="card float-right" style="width: 25rem;">
+
     <div class="card-body">
+      <button id="exitGame" class="btn btn-sm btn-danger">Log out</button>
       <h5 class="card-title">Leaderboard</h5>
       <table class="table">
         <thead class="thead">
@@ -54,9 +60,10 @@ and to change the game state of the game.">
           </tbody>
         </table>
       </div>
-      <button id="exitGame" class="btn btn-sm btn-danger">Log out</button>
+
       <script src="logOut.js"></script>
-      <a href="#" onclick="gameStateChange()" class="btn btn-warning" style="margin-top: 20px;">End game</a>
+      <a href="#" onclick="gameStateChange()" class="btn btn-warning" style="margin-bottom: 20px;margin-top: 20px;" >End game</a>
+      <button id="clearfeed" class="btn btn-sm btn-danger">Clear Feed</button>
     </div>
   </div>
   </div>
@@ -70,5 +77,6 @@ and to change the game state of the game.">
 </body>
 
   <script src="feed.js"></script>
+  <script src="clearFeed.js"></script>
 
 </html>
