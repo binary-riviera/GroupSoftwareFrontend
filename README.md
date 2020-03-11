@@ -22,7 +22,7 @@
          alt="License">
   </a>
   <a href="https://binary-riviera.github.io/GroupSoftwareFrontend/introPage.html">
-  <img src="https://img.shields.io/website?down_color=red&down_message=offline&up_message=online&url=https%3A%2F%2Fbinary-    riviera.github.io%2FGroupSoftwareFrontend%2FintroPage.html"
+  <img src="https://img.shields.io/website-up-down-green-red/http/shields.io.svg"
          alt="Website">
      <a>
  
@@ -56,7 +56,7 @@
 </p>
 
 
-We has created a treasure hunt game for new students to complete during welcome 
+We have created a treasure hunt game for new students to complete during welcome 
 week to help orientate students on campus while being an icebreaker to meet their peers. 
 Students are able to solve clues on the app to find their way to locations around campus
 in small groups and complete tasks when they arrive. The webapp also features a gamekeeper user 
@@ -172,19 +172,27 @@ The tests will all be run then, displaying the passes and failures on the comman
 ### Realtime database
 
 <br>
-  <a href="https://binary-riviera.github.io/GroupSoftwareFrontend/introPage.html"><img src="https://i.imgur.com/RKZZeNy.png" alt="Sitemap"></a>
+  <a href="https://binary-riviera.github.io/GroupSoftwareFrontend/introPage.html"><img src="https://i.imgur.com/I2cu9Ky.png" alt="Sitemap"></a>
   <br>
 
 ## How to play
 
 **Student** :mortar_board:
 
-Upon starting a game the players will be given a hint to help them find their way to one of the university resources. Players can use the 'FAQ' button to get help with frequently ocurring questions about the game or press the 'I need help' button to notify the gamekeeper that they feel unsafe or overwhelmed. Players can use the feed to keep track of the state of the game and use the 'Emoji buttons' for a fun and fast-paced way of communicating. When arriving at the intended resource, players must use the 'Open camera' button to scan a QR code and recieve their next hint. The game is finished when the players have been to all the resources on their route and scanned the QR codes.
+Upon starting a game the players will be given a hint to help them find their way to one of the university resources. Players can use the **'FAQ'** button to get help with frequently ocurring questions about the game or press the **'I need help'** button to notify the gamekeeper that they feel unsafe or overwhelmed. Players can use the feed to keep track of the state of the game and use the **'Emoji buttons'** for a fun and fast-paced way of communicating. When arriving at the intended resource, players must use the **'Open camera'** button to scan a QR code and recieve their next hint. The game is finished when the players have been to all the resources on their route and scanned the QR codes.
+
+<br>
+  <a><img src="https://i.imgur.com/TCew7OF.jpg" alt="Student screen" width="200" height="400"></a>
+ <br>
 
 
 **Gamekeeper** :game_die:
 
-The gamekeeper has the ability to start and end a game using the 'Start/End game' button and can keep track of everything using a map of the university, a leaderboard and the feed. The map displays a marker for each player which is updated in real-time to allow the gamekeeper to keep track of their progress. The leaderboard will display all the rankings of the players and also what stage they are currently at. The gamekeeper can recieve help requests from players and keep track of the game state using the feed which the gamekeeper can also manually clear using the 'Clear feed' button.
+The gamekeeper has the ability to start and end a game using the **'Start/End game'** button and can keep track of everything using a map of the university, a leaderboard and the feed. The map displays a marker for each player which is updated in real-time to allow the gamekeeper to keep track of their progress. The leaderboard will display all the rankings of the players and also what stage they are currently at. The gamekeeper can recieve help requests from players and keep track of the game state using the feed which the gamekeeper can also manually clear using the **'Clear feed'** button. 
+
+<br>
+  <a><img src="https://i.imgur.com/8CnZ6RB.png" alt="Student screen"></a>
+ <br>
 
 
 ## Authors
