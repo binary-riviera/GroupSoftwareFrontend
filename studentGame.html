@@ -10,11 +10,11 @@ which they will have open while doing the orienteering.">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Fonts -->
-  <link rel="stylesheet" type="text/css" href="orient.css">
+  <link rel="stylesheet" type="text/css" href="studentGame.css">
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/dynamsoft-javascript-barcode@7/dist/dbr.min.js" data-productKeys="t0068NQAAAG7Qn5IqU60aACklhCh1547Y0AiXqatEALYx6fCb95M6PB96khQi9mJwTIZk0O9ozd7sYfjvmGU299RkqlSTlTs="></script>
+  <script src="https://cdn.jsdelivr.net/npm/dynamsoft-javascript-barcode@7/dist/dbr.min.js" data-productKeys="t0068NQAAAGUJIGjizkl8dDKv2hOYe26NDdVN3Sc8XKpqMbhVXAuJ/ARRBGVpau/2u9/Jf3peJtEjgmJ6BFak9avZ/4JssZQ="></script>
   <title>Student Game</title>
 
   <!-- Initialize Firebase -->
@@ -25,7 +25,7 @@ which they will have open while doing the orienteering.">
   <script src="fireConfig.js"></script>
 
 </head>
-<body style ="background: #222;">
+<body>
 
 
   <!-- student Alerts -->
@@ -36,52 +36,27 @@ which they will have open while doing the orienteering.">
   <button id="exitGame" class="btn btn-sm btn-danger"style = "margin-bottom: 10px;text-align:center" >Exit Game</button>
   <script src="logOut.js"></script>
 
-  <div class="container" style ="background: #222;">
-
-
-
-
+  <div class="container">
     <main class="game">
-
-
-
-          <div style="clear: both;text-align:center">
-
-            <h4 style="float: left;margin-left: 20px;" id="waypointNumber">...</h4>
-            <h4 style="float: left">/5 waypoints reached </h4>
-
-          </div>
-
-
-
       <div class="container clue" style = "margin-bottom: 10px;">
-        <h5 > Clue:</53>
-        <h5 id="clue"> ...</h5>
-        <h6 id="gameCondition" style = "margin-bottom: 10px;">Waiting for players</h6>
-
-
-      </div>
-
-
-      <div class="container" style="padding-top:20px;">
-        <div class="row camera justify-content-center">
-
-
-
-          <button onclick="openCamera()" class="btn btn-sm btn-primary" style="padding: 10px 10px 10px 10px;margin-bottom: 10px" type="submit">Open Camera</button>
-
+        <div class="waypoint">
+          <h4 class="waypoint-text" id="waypointNumber">...</h4>
+          <h4 class="waypoint-text">/5 waypoints reached</h4>
         </div>
+        <h5 class="clue-text-prompt">Clue:</h5>
+        <h5 id="clue" class="clue-text"> ...</h5>
+        <h6 id="gameCondition" style = "margin-bottom: 10px;">Waiting for players</h6>
+      </div>
+      <div class="container" style="padding-top:20px;">
+
 
 
         <div class="btn-group">
-          <button id="helpButton" class="btn btn-lg btn-secondary btn-block ">I need Help</button>
-
+          <button id="helpButton" class="help-faq-buttons">I need Help</button>
         </div>
 
         <div class="btn-group float-right">
-
-          <button onclick="window.location.href='faq.html'" class="btn pull-right btn-lg btn-secondary btn-block" type="submit">FAQ</button>
-
+          <button onclick="window.location.href='faq.html'" class="help-faq-buttons" type="submit">FAQ</button>
         </div>
 
       </div>
@@ -92,32 +67,25 @@ which they will have open while doing the orienteering.">
           <thead>
 
           </thead>
-          <tbody id = "feed" style= "color:white ;">
+          <tbody id = "feed" style= "color:black ;">
 
           </tbody>
         </table>
       </div>
 
-      <div class="btn-group">
-      <button id="emo" class="btn btn-lg btn-secondary btn-block ">🗿</button>
+
+      <div class="emoji-row">
+        <button id="emo" class="emoji-button">🗿</button>
+        <button id="emo1" class="emoji-button">😢</button>
+        <button id="emo2" class="emoji-button">👀</button>
+        <button id="emo3" class="emoji-button">👎</button>
+        <button id="emo4" class="emoji-button">👍</button>
       </div>
-      <div class="btn-group offset-md-1">
-      <button id="emo1" class="btn btn-lg btn-secondary btn-block ">😢</button>
-      </div>
-      <div class="btn-group offset-md-1">
-      <button id="emo2" class="btn btn-lg btn-secondary btn-block ">👀</button>
-      </div>
-      <div class="btn-group offset-md-1">
-      <button id="emo3" class="btn btn-lg btn-secondary btn-block ">👎</button>
-      </div>
-      <div class="btn-group offset-md-1" >
-      <button id="emo4" class="btn btn-lg btn-secondary btn-block ">👍</button>
-      </div>
+
+      <button onclick="openCamera()" class="open-camera-button" style="padding: 10px 10px 10px 10px;margin-bottom: 10px" type="submit">Open Camera</button>
 
 
   </main>
-
-
   </div>
 
 

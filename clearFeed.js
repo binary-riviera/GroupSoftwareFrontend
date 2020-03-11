@@ -12,3 +12,15 @@ clear.addEventListener('click', e => {
 
 
 });
+
+
+
+var len = parseInt(localStorage.getItem("lengthFeed"));
+
+if (len>120){
+  firebase.database().ref().child('feed').set({
+      "0":"Game Keeper has manually cleared the feed"
+  });
+  console.log('real time database updated with emoji');
+
+}
