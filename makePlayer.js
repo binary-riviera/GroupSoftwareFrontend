@@ -16,6 +16,8 @@ coords = {
 
 var name = localStorage.getItem("studentName");
 var len = localStorage.getItem("lengthFeed");
+
+
 if (name!="null"){
 var userName = name.replace('@exeter.ac.uk', '')
 firebase.database().ref('players/' + userName).set({
