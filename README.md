@@ -13,23 +13,33 @@
 </h1>
 
 <p align="center">
-  <a>
-    <img src="https://img.shields.io/appveyor/build/binary-riviera/GroupSoftwareFrontend"
-         alt="Build">
-  </a>
-    <a>
+     <a href="https://github.com/binary-riviera/GroupSoftwareFrontend">
     <img src="https://img.shields.io/github/commit-activity/m/binary-riviera/GroupSoftwareFrontend"
          alt="Commit">
   </a>
-    <a>
+    <a href="https://github.com/binary-riviera/GroupSoftwareFrontend/blob/master/LICENSE">
     <img src="https://img.shields.io/github/license/binary-riviera/GroupSoftwareFrontend"
          alt="License">
   </a>
-    <a>
-    <img src="https://img.shields.io/david/binary-riviera/GroupSoftwareFrontend"
-         alt="Dependencies">
-  </a>
+  <a href="https://binary-riviera.github.io/GroupSoftwareFrontend/introPage.html">
+  <img src="https://img.shields.io/website-up-down-green-red/http/shields.io.svg"
+         alt="Website">
+     <a>
+ 
 </p>
+
+<p align="center">
+  
+  <a href="https://github.com/binary-riviera/GroupSoftwareFrontend/blob/master/CODE_OF_CONDUCT.md">
+    <img src="http://ForTheBadge.com/images/badges/makes-people-smile.svg"
+         alt="Smile">
+  </a>
+   <a href="https://en.wikipedia.org/wiki/Electricity">
+    <img src="http://ForTheBadge.com/images/badges/powered-by-electricity.svg"
+         alt="Elecricity">
+  </a>
+  
+  </p>
 
 <p align="center">
  • <a href="#getting-started">Getting started</a> •
@@ -46,20 +56,29 @@
 </p>
 
 
-
-We has created a treasure hunt game for new students to complete during welcome 
+We have created a treasure hunt game for new students to complete during welcome 
 week to help orientate students on campus while being an icebreaker to meet their peers. 
 Students are able to solve clues on the app to find their way to locations around campus
 in small groups and complete tasks when they arrive. The webapp also features a gamekeeper user 
 profile which can be used to supervise the game and make changes.
 
-**Link to hosted page**: <https://binary-riviera.github.io/GroupSoftwareFrontend/introPage.html>
+**Link to hosted page**: **https://binary-riviera.github.io/GroupSoftwareFrontend/introPage.html**
 
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a web browser or mobile device.
 
 ### Dependencies
+
+* Firebase Authentication
+* Firebase Realtime Database
+* Firebase Firestore
+* Nodejs (if running tests locally)
+* Cypress (if running tests locally)
+
+ [![ForTheBadge uses-html](http://ForTheBadge.com/images/badges/uses-html.svg)](http://ForTheBadge.com)
+ [![ForTheBadge uses-css](http://ForTheBadge.com/images/badges/uses-css.svg)](http://ForTheBadge.com)
+ [![ForTheBadge uses-js](http://ForTheBadge.com/images/badges/uses-js.svg)](http://ForTheBadge.com)
 
 
 ### Prerequisites
@@ -120,6 +139,7 @@ On Windows
 ```
 The tests will all be run then, displaying the passes and failures on the command line.
 
+
 ## Deployment
 
 **Student** :mortar_board: 
@@ -146,21 +166,33 @@ The tests will all be run then, displaying the passes and failures on the comman
 ### Sitemap
 
 <br>
-  <a href="https://binary-riviera.github.io/GroupSoftwareFrontend/introPage.html"><img src="https://i.imgur.com/6JxdYiJ.png" alt="Sitemap" width="400"></a>
+  <a href="https://binary-riviera.github.io/GroupSoftwareFrontend/introPage.html"><img src="https://i.imgur.com/6JxdYiJ.png" alt="Sitemap"></a>
   <br>
+  
+### Realtime database
 
+<br>
+  <a href="https://binary-riviera.github.io/GroupSoftwareFrontend/introPage.html"><img src="https://i.imgur.com/I2cu9Ky.png" alt="Sitemap"></a>
+  <br>
 
 ## How to play
 
 **Student** :mortar_board:
 
-Upon starting a game the players will be given a hint to help them find their way to one of the university resources. Players can use the 'FAQ' button to get help with frequently ocurring questions about the game or press the 'I need help' button to notify the gamekeeper that they feel unsafe or overwhelmed. Players can use the feed to keep track of the state of the game and use the 'Emoji buttons' for a fun and fast-paced way of communicating. When arriving at the intended resource, players must use the 'Open camera' button to scan a QR code and recieve their next hint. The game is finished when the players have been to all the resources on their route and scanned the QR codes.
+Upon starting a game the players will be given a hint to help them find their way to one of the university resources. Players can use the **'FAQ'** button to get help with frequently ocurring questions about the game or press the **'I need help'** button to notify the gamekeeper that they feel unsafe or overwhelmed. Players can use the feed to keep track of the state of the game and use the **'Emoji buttons'** for a fun and fast-paced way of communicating. When arriving at the intended resource, players must use the **'Open camera'** button to scan a QR code and recieve their next hint. The game is finished when the players have been to all the resources on their route and scanned the QR codes.
+
+<br>
+  <a><img src="https://i.imgur.com/TCew7OF.jpg" alt="Student screen" width="200" height="400"></a>
+ <br>
 
 
 **Gamekeeper** :game_die:
 
-The gamekeeper has the ability to start and end a game using the 'Start/End game' button and can keep track of everything using a map of the university, a leaderboard and the feed. The map... The leaderboard will display all the rankings of the players and also what stage they are currently at. The gamekeeper can recieve help requests from players and keep track of the game state using the feed which the gamekeeper can also manually clear.
+The gamekeeper has the ability to start and end a game using the **'Start/End game'** button and can keep track of everything using a map of the university, a leaderboard and the feed. The map displays a marker for each player which is updated in real-time to allow the gamekeeper to keep track of their progress. The leaderboard will display all the rankings of the players and also what stage they are currently at. The gamekeeper can recieve help requests from players and keep track of the game state using the feed which the gamekeeper can also manually clear using the **'Clear feed'** button. 
 
+<br>
+  <a><img src="https://i.imgur.com/8CnZ6RB.png" alt="Student screen"></a>
+ <br>
 
 
 ## Authors
